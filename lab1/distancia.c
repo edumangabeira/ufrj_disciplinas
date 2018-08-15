@@ -1,7 +1,7 @@
 /*
 Eduardo Freire Mangabeira
 github:/edumangabeira
-Descrição:[10-Ago-2018] URI: urionlinejudge.com - Escrever código que calcule a distância entre dois pontos num plano xy.
+Descrição:[12-Ago-2018] URI: urionlinejudge.com - Escrever código que calcule a distância entre dois pontos num plano xy.
 
 Entrada: coordenadas de dois pontos no plano.
 
