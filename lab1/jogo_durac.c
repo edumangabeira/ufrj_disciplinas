@@ -1,7 +1,7 @@
 /*
 Eduardo Freire Mangabeira
 github:/edumangabeira
-Descrição:[10-Ago-2018] URI: urionlinejudge.com - Escrever código que determine a duração de um jogo qualquer.
+Descrição:[14-Ago-2018] URI: urionlinejudge.com - Escrever código que determine a duração de um jogo qualquer.
 
 Obs: O jogo tem duração mínima de um (1) minuto e duração máxima de 24 horas.
 
