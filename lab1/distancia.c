@@ -30,7 +30,6 @@ int main(void){
 
 	distancia = sqrt(pow(x_1 - x_0, 2) + pow(y_1 - y_0, 2));
 
-
 	printf("a distância entre os dois pontos é: %.2f", distancia);
 
 	return 0;
