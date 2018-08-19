@@ -5,13 +5,13 @@ Descrição: Calcula imposto de renda e alíquota efetiva de um contribuinte bas
 
 OBS: aliquota efetiva = (valor do imposto incidente) / (renda tributável do contribuinte).
  ________________________________________
-|Base de calculo (R$)  	  |	Alíquota (%) |
+|Base de calculo (R$)  	  | Alíquota (%) |
 |-------------------------|--------------|
-|Ate 1.903,98 			  | isento		 |
-|De 1.903,99 ate 2.826,65 |	7,5			 |
-|De 2.826,66 ate 3.751,05 |	15			 |
-|De 3.751,06 ate 4.664,68 |	22,5		 |
-|Acima de 4.664,68		  |	27,5         |
+|Ate 1.903,98 		  | isento       |
+|De 1.903,99 ate 2.826,65 |	7,5	 |
+|De 2.826,66 ate 3.751,05 |	15	 |
+|De 3.751,06 ate 4.664,68 |	22,5	 |
+|Acima de 4.664,68	  |	27,5     |
 |_________________________|______________| 
 
 Entrada: Renda mensal do contribuinte.
