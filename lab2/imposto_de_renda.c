@@ -1,7 +1,7 @@
 /*
 Eduardo Freire Mangabeira
 github: edumangabeira
-Descrição: Calcula imposto de renda e alíquota efetiva de um contribuinte baseado na tabela do IR de 2015.
+Descrição: [18-08-2018]Calcula imposto de renda e alíquota efetiva de um contribuinte baseado na tabela do IR de 2015.
 
 OBS: aliquota efetiva = (valor do imposto incidente) / (renda tributável do contribuinte).
  ________________________________________
