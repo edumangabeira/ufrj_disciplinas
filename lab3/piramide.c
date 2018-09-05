@@ -24,7 +24,7 @@ int main (void){
 	aux = 0;
 	puts("digite a quantidade de andares da sua piramide\n\t\t\n");
 	scanf("%d", &n);
-	while(aux <= n){
+	while(aux < n){
 		aux_1 = n;
 		aux_2 = 0;
 		while(aux_1 >= aux){
