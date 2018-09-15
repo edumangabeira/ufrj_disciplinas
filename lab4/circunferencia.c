@@ -1,6 +1,6 @@
 /*
 Eduardo Freire Mangabeira
-Descrição: Primeira atividad
+Descrição: Primeira atividade
 
 Implemente o TAD tCirculo representando um cırculo com as seguintes operacoes: 
 (a) Inicializacao de cırculo com raio unitario e centro na origem do eixo de coordenadas; 
@@ -52,10 +52,10 @@ int main(void){
 		}
 	}
 	puts("Primeiro forme seu circulo; \n\n");
-    puts("1- Digite '1' caso queira formar seu proprio circulo, entrando com raio, ");
-    puts("abscissa e ordenada.\n\n");
-	puts("2 -Digite '2' caso queira usar o circulo de raio unitario ");
-	puts("e coordenadas na origem.\n\n");
+    puts("1- Digite '1' e pressione [ENTER] caso queira formar seu\n");
+    puts("proprio circulo, entrando com raio,  abscissa e ordenada.\n");
+	puts("2 -Digite '2' e pressione [ENTER] caso queira\n");
+	puts("usar o circulo de raio unitario e coordenadas na origem.\n\n");
    
 	scanf("%d", &escolha);
 
@@ -77,7 +77,7 @@ int main(void){
 	circulo = cr;
 	area = PI * circulo.raio;
 
-	printf("O circulo que voce construiu tem area = %.2f\n\n\n", area);
+	printf("\n\nO circulo que voce construiu tem area = %.2f\n\n\n", area);
 	puts("A seguir digite as coordenadas de um ponto qualquer no plano, se estiver\n");
 	puts("contido no circulo formado, eu te avisarei.\n\n");
 	printf("abscissa(eixo x)\n\n:");
@@ -87,10 +87,10 @@ int main(void){
 
 	distancia = sqrt(pow((x_1 - circulo.x_0),2) + pow((y_1 - circulo.y_0),2));
 	if(distancia > circulo.raio){
-		puts("O ponto escolhido NAO pertence ao circulo!!!\n\n");
+		puts("\nO ponto escolhido NAO pertence ao circulo!!!\n\n");
 
 	}else{
-		puts("O ponto escolhido PERTENCE ao circulo!!!\n\n");
+		puts("\nO ponto escolhido PERTENCE ao circulo!!!\n\n");
 	}
 
 	return 0;
