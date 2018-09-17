@@ -1,3 +1,4 @@
+#include "ed_operations.h"
 /*
 Implementa conjunto de operacoes para os exercicios propostos em sala.
 */

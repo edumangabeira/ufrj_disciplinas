@@ -23,7 +23,7 @@ Saída:
 
 //Não gostei dessa implementação, vou tentar fazer novamente mais tarde.
 #include<stdio.h>
-#include<conio.h>
+//#include<conio.h>
 #include"ed_operations.h"
 
 int main(void){
@@ -38,7 +38,8 @@ int main(void){
 	puts("Voce, usuario, deve informar o horario no seguinte formato: HORAS/MINUTOS/SEGUNDOS\n\n\n");
 	printf("Pressione [ENTER] para continuar...\n\n");
 
-	tecla = getch();
+	//procurar getchar
+	/*tecla = getch();
 	while(1){
 
 		if(tecla == 13){	
@@ -47,7 +48,7 @@ int main(void){
 			printf("%d", tecla);
 			tecla = getch();
 		}
-	}
+	}*/
 
 	while(i >= 5){
 		while(j >= 2){
