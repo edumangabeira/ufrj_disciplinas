@@ -41,3 +41,15 @@ Restricoes:
 int multiplica (int x, int y) {
    return x * y;
 }
+
+int potencia(int x, int y){
+	int i;
+	int k = 1;
+	for(i=0; i<y;i++){
+		k = x * k;
+	}
+	if (y == 0){
+		k = 1;
+	}
+	return k;
+}

@@ -65,6 +65,7 @@ int main(void){
 			}
 			j = j + 1;
 		}
+		
 		sub_t1 = t_1.hora*3600 + t_1.minuto*60 + t_1.segundo;
 		sub_t2 = t_2.hora*3600 + t_2.minuto*60 + t_2.segundo;
 

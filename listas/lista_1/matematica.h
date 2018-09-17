@@ -33,3 +33,7 @@ Saida: o produto dos dois numeros
 Restricoes:
 */
 int multiplica (int x, int y);
+
+
+//calcula a potencia de x elevado a y
+int potencia(int x, int y);
