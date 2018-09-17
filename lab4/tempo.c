@@ -69,7 +69,7 @@ int main(void){
 		sub_t1 = t_1.hora*3600 + t_1.minuto*60 + t_1.segundo;
 		sub_t2 = t_2.hora*3600 + t_2.minuto*60 + t_2.segundo;
 
-		if(compara_tempo(t_1,t_2)){
+		if(compara_tempo(t_1,t_2) == 1){
 			t_sub = sub_t1 - sub_t2;
 		}else{
 			t_sub = sub_t2 - sub_t1;
