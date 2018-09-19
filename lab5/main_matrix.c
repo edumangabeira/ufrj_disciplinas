@@ -13,8 +13,6 @@ OBS: pesquisar como a linguagem C armazena uma matriz na memória(cache).
 #include "functions_matrix.h"
 #define N 20
 #define M 20
-void somaMatrizes(int mat1[][]);
-void matrizQuadrada(int mat1[N][N], int row, int col);
 
 int main(void){
 	Dimensoes dim;
@@ -41,11 +39,27 @@ int main(void){
 	}
 
 	if (dim.row == dim.col){
-		printf("Deseja somar as duas matrizes?");
+		//soma
+		printf("Deseja somar as duas matrizes?\n\n");
 		scanf("%c", &resposta);
 		if(resposta == 's'){
+			printf("o resultado da soma eh: \n\n")
 			somaMatrizes(matriz[][], matriz[][], row, col);
 		}
+		//multiplicacao
+		printf("Deseja multiplicar as duas matrizes?\n\n");
+		scanf("%c", &resposta);
+		if(resposta == 's'){
+			printf("o resultado da multiplicacao eh: \n\n");
+			multiplicaMatriz();
+
+		//quadrado de 1 e 0
+		printf("Deseja achar o quadrado de uma matriz de zeros e uns?\n\n");
+		scanf("%c", &resposta);
+		if(resposta == 's'){
+			matrizQuadrada();
+		}
+	
 	}
 
 	return 0;
