@@ -8,7 +8,6 @@ Saída: Matriz preenchida.
 
 OBS: pesquisar como a linguagem C armazena uma matriz na memória(cache).
 */
-
 #include<stdio.h>
 #include "functions_matrix.h"
 #define N 20
@@ -17,7 +16,7 @@ OBS: pesquisar como a linguagem C armazena uma matriz na memória(cache).
 int main(void){
 	Dimensoes dim;
 	int i, j, k; //indices
-	int matriz[][N];
+	int m1[][N], m2[][N];//matrizes
 	int quant_matriz;//quantidade de matrizes
 	char resposta;
 
@@ -35,7 +34,6 @@ int main(void){
 				scanf("%d",&matriz[i][j]);
 			}
 		}
-		
 	}
 
 	if (dim.row == dim.col){
@@ -44,22 +42,22 @@ int main(void){
 		scanf("%c", &resposta);
 		if(resposta == 's'){
 			printf("o resultado da soma eh: \n\n")
-			somaMatrizes(matriz[][], matriz[][], row, col);
+			somaMatrizes(m1[][], m2[][], dim.row, dim.col);
 		}
+		
 		//multiplicacao
 		printf("Deseja multiplicar as duas matrizes?\n\n");
 		scanf("%c", &resposta);
 		if(resposta == 's'){
 			printf("o resultado da multiplicacao eh: \n\n");
-			multiplicaMatriz();
+			multiplicaMatriz(m1[][], m2[][], dim.row, dim.col);
 
 		//quadrado de 1 e 0
-		printf("Deseja achar o quadrado de uma matriz de zeros e uns?\n\n");
+		printf("Deseja achar o quadrado de uma matrizes? (apenas aceita matrizes preenchidas por 0 e 1)\n\n");
 		scanf("%c", &resposta);
 		if(resposta == 's'){
-			matrizQuadrada();
+			matrizQuadrada(m1[][], m2[][], dim.row, dim.col);
 		}
-	
 	}
 
 	return 0;
