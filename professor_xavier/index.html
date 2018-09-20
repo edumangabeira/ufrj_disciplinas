@@ -1,29 +1,41 @@
 <!DOCTYPE html>
 <html lang=pt-br>
 <head>
+	<!--<link rel="stylesheet" type="text/css" href="resources/CSS/style.css">-->
 	<title>Xavier Xmen</title>
 	<!--<a href ="imagem.ico" type="image/icon"-->
 	<meta charset = "UTF-8">
-	<link rel="stylesheet" type="text/css" href="resources/CSS/style.css"/>
+<style>
+	.materia{
+		font-size: 22px;
+		background-color: tomato;
+		color:black;
+		padding: 2px;
+		height: 50%;
+	}
+
+</style>
 </head>
 
-
-
-<body>
+<body style="background-color:powderblue;">
 	<!--div para cabeçalho do corpo do texto-->
 	<h1>Professor Xavier</h1>
 	<hr>
 	<h3>Boas vindas ao meu site!</h3>
-
-		<img src="resources/img/professor-xavier.jpg" width = "300" height = "200">
-
-		<ul>
-			<li><a href= "https://pt.wikipedia.org/wiki/Wolverine"> Wolverine</a> 
-	
-
-			<li><a href="https://pt.wikipedia.org/wiki/Jean_Grey"> Jean grey</a> 
-
-			<li><a href="https://pt.wikipedia.org/wiki/Rogue"> Vampira </a> 
-		</ul>
+		<img src="resources/img/professor-xavier.jpg" width ="300" height ="200">
+		<table>
+			<tr>
+			<th><a class = "materia">Disciplinas</a></th>
+		    </tr>
+			<tr>
+			<td><a class = "materia" href="https://pt.wikipedia.org/wiki/Wolverine"> Wolverine</a></td>
+			</tr>
+			<tr>
+			<td><a class = "materia" href="https://pt.wikipedia.org/wiki/Jean_Grey"> Jean grey</a></td> 
+			</tr>
+			<tr>
+			<td><a class = "materia" href="https://pt.wikipedia.org/wiki/Rogue"> Vampira </a></td>
+			</tr>
+		</table>
 </body>
 </html>
