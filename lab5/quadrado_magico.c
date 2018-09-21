@@ -36,7 +36,6 @@ int main(void){
 		}
 	}
 	puts("");
-
 	for(i=0; i < n; i++){
 		for (j=0; j < n; j++){
 			printf("%d", matriz[i][j]);
@@ -52,6 +51,7 @@ int main(void){
 	}
 	return 0;
 }
+
 
 
 
