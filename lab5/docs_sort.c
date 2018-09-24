@@ -6,8 +6,8 @@ Implementa funções para ordenar vetores
 void bubble_sort(vetor[N], len){
 	int i, j;
 	float temp;
-	for(i=0; i < len-1; i++){
-		for(j=0; j < len-1-i; j++){
+	for(i= len-1; i > 0 ; i--){
+		for(j= len-1-i; j > 0 ; j--){
 			if(vetor[i] > vetor[i+1]){
 				temp = vetor[i];
 				vetor[i] = vetor[i+1];
