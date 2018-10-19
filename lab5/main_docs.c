@@ -24,7 +24,7 @@ int main(){
 		qntt_ppl_value = qntt_ppl_value + 1;
 	}
 	//preenche a matriz com os dados de cada usuario
-	puts("porfavor preencha a lista de dados sobre cada pessoa");
+	puts("por favor preencha a lista de dados sobre cada pessoa");
 	for(i=0; i < qntt_ppl; i++){
 		for (j=0; j < M; j++){
 			if(j == 0){
@@ -34,6 +34,8 @@ int main(){
 				while(cpf_value !=1){
 					printf("    %s:", "CPF");
 					scanf("%d", ppl.cpf);
+
+					//valida campo cpf
 					if(ppl.cpf > 999999999 || ppl.cpf < 100000000){
 						puts("cpf invalido, tente novamente");
 						cpf_value = cpf_value - 1;
