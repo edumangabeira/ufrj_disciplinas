@@ -69,10 +69,10 @@ int main(void){
 		while(check <= 0)
 		}
 
+		fulfill_matrix(matriz[gamemode][gamemode]);
 		search_matrix(matriz[gamemode][gamemode], gamemode);
 
-
-		printf("O jogo se inicia!!!!!!!!!!!")
+		puts("O jogo se inicia!!!!!!!!!!!");
 
 		printf("Deseja jogar novamente?\n\n\t s- sim | n - nao");
 		scanf("%c",&again);
