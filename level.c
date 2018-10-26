@@ -10,9 +10,9 @@ int search_matrix(int matriz[][N], gamemode){
 	for (i=0; i < N; i++){
 		for(j=0; j < N; j++){
 
-			if (matriz[i][]){
+			if (matriz[i][j]){
 				//venceu diagonal 1
-				winner = ;
+				winner = matriz[i][j]];
 			}else{
 				if(matriz [i][]){
 				//venceu diagonal 2 percorrendo ao contrário
@@ -27,7 +27,6 @@ int search_matrix(int matriz[][N], gamemode){
 							winner = ;
 						}
 					} 
-				
 				}
 			}
 		}
@@ -40,6 +39,19 @@ int search_matrix(int matriz[][N], gamemode){
 	}
 }
 
+fulfill_matrix(matriz[][N]){
+	int i, j;
+	int x, o;
+	int winner;
+	for (i=0; i < N; i++){
+		printf(" ");
+		for(j=0; j < N; j++){
+			printf("\n");
+
+		}
+	}
+
+}
 
 void easy(){
 
