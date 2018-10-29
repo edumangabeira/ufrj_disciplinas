@@ -5,6 +5,7 @@ github: /edumangabeira
 descrição: primeira atividade do lab 8
 
 Entrada: quantidade de questoes da prova, gabarito da prova e resposta do aluno
+Saida: nota do aluno
 */
 
 #include<stdio.h>
