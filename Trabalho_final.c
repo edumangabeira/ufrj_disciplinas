@@ -16,6 +16,8 @@ int main(void){
 
 	int matriz[N][N];
 	char again;
+	//float mat[N][M];
+	//fwrite(mat, sizeof(float), N*M, arq); 
 
 	while(1){
 		printf("Qual modo de jogo?
