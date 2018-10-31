@@ -34,7 +34,7 @@ int main(){
 	}
 	for(i=0; i<26;i++){
 		if(alfabeto[i] == maior){
-			printf("%c apareceu %d vezes. \n", 'a' + alfabeto[i], maior);
+			printf("%c apareceu %d vezes. \n", 'a' + i, maior);
 		}
 	}
 	fclose(arq);
