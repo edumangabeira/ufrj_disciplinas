@@ -17,7 +17,7 @@ int main(){
 
 	//abre arquivo para leitura binaria
 	arq = fopen("valores.dat", "rb");
-	
+
 	fread(f_value, sizeof(float), N, arq);
 	fread(d_value, sizeof(int), N, arq);
 
