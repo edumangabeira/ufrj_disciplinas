@@ -13,7 +13,7 @@ int search_matrix(int matriz[][N], int gamemode);
 
 void display_game(int matriz[][N]);
 
-void classic_velha(int matriz[][N],int cpu_or_player);
+void classic_velha(int matriz[][N],int gamemode,int cpu_or_player);
 
 /*
 void easy();
