@@ -3,6 +3,7 @@ Eduardo Freire Mangabeira
 Data: [16/10/2018]
 */
 #include<stdio.h>
+#include<stdbool.h>
 #define N 9
 
 int search_matrix(int matriz[][N], int gamemode){
@@ -67,7 +68,7 @@ void display_game(int matriz[][N], int gamemode){
 	}
 }
 
-void classic_velha(int matriz[][N], int gamemode, int cpu_or_player){
+void classic_velha(int matriz[][N], int gamemode, int cpu_or_player){ 
 	int i, j,
 		diagonal1_w = 0, diagonal1_k = 0,
 		diagonal2_w = 0, diagonal2_k = 0,
@@ -75,7 +76,8 @@ void classic_velha(int matriz[][N], int gamemode, int cpu_or_player){
 		vertical_w, vertical_k,
 		ganha_x = 0, ganha_o = 0,
 		p_vert_xis,p_vert_circulo,
-		p_horiz_xis, p_horiz_circulo; 
+		p_horiz_xis, p_horiz_circulo;		
+	bool diagonal_2 = ((i==1) && (j==3) || (i==2 && j==2) || (i=3 && j==1));  
 
 	for (i=0; i < gamemode; i++){
 		horizontal_w = 0, horizontal_k = 0;
@@ -137,14 +139,14 @@ void classic_velha(int matriz[][N], int gamemode, int cpu_or_player){
 				}
 			}
 			//percorre diagonal 2
-			if((((i==1) && (j==3)) || (i==2 && j==2) || (i=3 && j==1)) && (matriz[i][j] == 'x')){
+			if((diagonal_2) && (matriz[i][j] == 'x')){
 				diagonal2_w = diagonal2_w + 1;
 				if(diagonal2_w == 3){
 					ganha_x = 1;
 					break;
 				}
 			}else{
-				if((((i==1) && (j==3)) || (i==2 && j==2) || (i=3 && j==1)) && (matriz[i][j] == 'o')){
+				if((diagonal_2) && (matriz[i][j] == 'o')){
 					diagonal2_k = diagonal2_k + 1;
 					if(diagonal2_k == 3){
 						ganha_o = 1;
