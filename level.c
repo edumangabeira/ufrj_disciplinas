@@ -43,11 +43,11 @@ Data: [16/10/2018]
 	}
 }
 */
-int fulfill_matrix_zero(int matriz[][N]){
+int fulfill_matrix(int matriz[][N]){
 	int i, j;
 	for (i=0; i < gamemode; i++){
 		for(j=0; j < gamemode; j++){
-			matriz[i][j] = 0;
+			matriz[i][j] = '\0';
 		}
 	}
 	return matriz[gamemode][gamemode];
@@ -65,18 +65,11 @@ void classic_bot_of_doom(int matriz[][N], int gamemode, int i, int j){
    double r ;
    srand (time(NULL)); /* inicializa o gerador de numeros pseudo-aleatorios */
    for (i=0; i<gamemode; i++){
-   	  k1 = rand(0,gamemode);
-   	  k2 = rand(0,gamemode);
-   	  if(matriz[i][j] != 0){
-   	  	 bot_choice = rand(0,1);
+   	  k1 = rand() % gamemode;
+   	  k2 = rand() % gamemode;
+   	  if(matriz[i][j] != '\0'){
+   	  	 bot_choice = rand() % 2;
    	  }else{
-      /* gera inteiro entre 0 e a constante RAND_MAX */
-      k = rand();
-      /* gera inteiro entre 0 e um nÃºmero, no caso 10 */
-      j = rand() % 10;
-      /* gera real entre 0 e 1 */
-      r = (1.0 * rand()) / RAND_MAX ;
-	}
 }
 
 void classic_velha(int matriz[][N], int gamemode, int cpu_or_player){ 
@@ -102,7 +95,7 @@ void classic_velha(int matriz[][N], int gamemode, int cpu_or_player){
 						puts("Jogador 1, onde deseja colocar o xis - (X) ?");
 						puts("digite a posicao horizontal e vertical, respectivamente:\n
 							(exemplo '11', '25', 53");
-						if(matriz[i][j] == 0){
+						if(matriz[i][j] == '\0'){
 							scanf("%d%d", &p_horiz_xis, &p_vert_xis);
 						}else{
 							printf("posicao ja ocupada, tente escolher outra ou perca a vez: \n");
@@ -112,7 +105,7 @@ void classic_velha(int matriz[][N], int gamemode, int cpu_or_player){
 						puts("Jogador 2, onde deseja colocar o circulo - (O) ?");
 						puts("digite a posicao horizontal e vertical, respectivamente:\n
 							(exemplo '11', '25', 53");
-						if(matriz[i][j] == 0){
+						if(matriz[i][j] == '\0'){
 							scanf("%d%d", &p_horiz_xis, &p_vert_xis);
 						}else{
 							printf("posicao ja ocupada, tente escolher outra ou perca a vez: \n");
@@ -134,7 +127,7 @@ void classic_velha(int matriz[][N], int gamemode, int cpu_or_player){
 						puts("Jogador 1, onde deseja colocar o xis - (X) ?");
 						puts("digite a posicao horizontal e vertical, respectivamente:\n
 							(exemplo '11', '25', 53");
-						if(matriz[i][j] == 0){
+						if(matriz[i][j] == '\0'){
 							scanf("%d%d", &p_horiz_xis, &p_vert_xis);
 						}else{
 							printf("posicao ja ocupada, tente escolher outra ou perca a vez: \n");
