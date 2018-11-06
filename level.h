@@ -11,7 +11,11 @@ Data: [16/10/2018]
 
 int search_matrix(int matriz[][N], int gamemode);
 
-void display_game(int matriz[][N]);
+int fulfill_matrix_zero(int matriz[][N]);
+
+void grid_display(int matriz[][N], int i, int j);
+
+void classic_bot_of_doom(nt matriz[][N], int gamemode, int i, int j);
 
 void classic_velha(int matriz[][N],int gamemode,int cpu_or_player);
 

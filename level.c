@@ -4,9 +4,11 @@ Data: [16/10/2018]
 */
 #include<stdio.h>
 #include<stdbool.h>
+#include<stdlib.h>
+#include<time.h>
 #define N 9
 
-int search_matrix(int matriz[][N], int gamemode){
+/*int search_matrix(int matriz[][N], int gamemode){
 	int i, j;
 	int winner;
 	for (i=0; i < N; i++){
@@ -40,31 +42,40 @@ int search_matrix(int matriz[][N], int gamemode){
 		puts("jodador __o__ venceu");
 	}
 }
-
-int fulfill_matrix(int matriz[][N]){
+*/
+int fulfill_matrix_zero(int matriz[][N]){
 	int i, j;
-	int x, o;
-	int winner;
-	for (i=0; i < N; i++){
-		printf(" ");
-		for(j=0; j < N; j++){
-			printf("\n");
-
+	for (i=0; i < gamemode; i++){
+		for(j=0; j < gamemode; j++){
+			matriz[i][j] = 0;
 		}
 	}
-
+	return matriz[gamemode][gamemode];
 }
 
-void display_game(int matriz[][N], int gamemode){
+void grid_display(int matriz[][N], int i , int j){
 
-	int i, j;
-	grid_display = gamemode*gamemode;
-	for(i=0; i<gamemode;  i++){
-		for(j=0; j<gamemode; j++){
-		printf("_|");
-		printf("");
-		}
+	puts("| %d |", matriz[i][j]);
+	puts(" ____ ");
+}
 
+void classic_bot_of_doom(int matriz[][N], int gamemode, int i, int j){
+   int i,
+   	   bot_choice;
+   double r ;
+   srand (time(NULL)); /* inicializa o gerador de numeros pseudo-aleatorios */
+   for (i=0; i<gamemode; i++){
+   	  k1 = rand(0,gamemode);
+   	  k2 = rand(0,gamemode);
+   	  if(matriz[i][j] != 0){
+   	  	 bot_choice = rand(0,1);
+   	  }else{
+      /* gera inteiro entre 0 e a constante RAND_MAX */
+      k = rand();
+      /* gera inteiro entre 0 e um nÃºmero, no caso 10 */
+      j = rand() % 10;
+      /* gera real entre 0 e 1 */
+      r = (1.0 * rand()) / RAND_MAX ;
 	}
 }
 
@@ -77,7 +88,9 @@ void classic_velha(int matriz[][N], int gamemode, int cpu_or_player){
 		ganha_x = 0, ganha_o = 0,
 		p_vert_xis,p_vert_circulo,
 		p_horiz_xis, p_horiz_circulo;		
-	bool diagonal_2 = ((i==1) && (j==3) || (i==2 && j==2) || (i=3 && j==1));  
+	bool diagonal_2 = ((i==1) && (j==3) || (i==2 && j==2) || (i=3 && j==1));
+
+	matriz[gamemode][gamemode] = fulfill_matrix_zero(matriz[gamemode][gamemode]);  
 
 	for (i=0; i < gamemode; i++){
 		horizontal_w = 0, horizontal_k = 0;
@@ -85,7 +98,7 @@ void classic_velha(int matriz[][N], int gamemode, int cpu_or_player){
 		for(j=0; j < gamemode; j++){
 			switch(cpu_or_player){
 				case 1:
-						grid_display();
+						grid_display(matriz[gamemode][gamemode], i, j);
 						puts("Jogador 1, onde deseja colocar o xis - (X) ?");
 						puts("digite a posicao horizontal e vertical, respectivamente:\n
 							(exemplo '11', '25', 53");
@@ -95,7 +108,7 @@ void classic_velha(int matriz[][N], int gamemode, int cpu_or_player){
 							printf("posicao ja ocupada, tente escolher outra ou perca a vez: \n");
 							scanf("%d%d", &p_horiz_xis, &p_vert_xis);
 						}
-						grid_display();
+						grid_display(matriz[gamemode][gamemode], i, j);
 						puts("Jogador 2, onde deseja colocar o circulo - (O) ?");
 						puts("digite a posicao horizontal e vertical, respectivamente:\n
 							(exemplo '11', '25', 53");
@@ -116,9 +129,20 @@ void classic_velha(int matriz[][N], int gamemode, int cpu_or_player){
 							}
 						}
 				break;
-				case 2: while()
-					    grid_display(); 
-						scanf("%d", &matriz[i][j]);
+				case 2:
+					    grid_display(matriz[gamemode][gamemode], i, j);
+						puts("Jogador 1, onde deseja colocar o xis - (X) ?");
+						puts("digite a posicao horizontal e vertical, respectivamente:\n
+							(exemplo '11', '25', 53");
+						if(matriz[i][j] == 0){
+							scanf("%d%d", &p_horiz_xis, &p_vert_xis);
+						}else{
+							printf("posicao ja ocupada, tente escolher outra ou perca a vez: \n");
+							scanf("%d%d", &p_horiz_xis, &p_vert_xis);
+						}
+						grid_display(matriz[gamemode][gamemode], i, j);
+						bot_of_doom(matriz[gamemode][gamemode], gamemode, i, j);
+
 				break;
 			}
 			//percorre diagonal 1
@@ -174,7 +198,7 @@ void classic_velha(int matriz[][N], int gamemode, int cpu_or_player){
 			//percorre verticais
 			if(matriz[j][i] == 'x'){
 				vertical_w = vertical_w + 1;
-				if(vertcial_w == 3){
+				if(vertical_w == 3){
 					ganha_x = 1;
 					break;
 				}
