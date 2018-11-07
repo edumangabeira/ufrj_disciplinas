@@ -45,34 +45,30 @@ Data: [16/10/2018]
 */
 int fulfill_matrix(int matriz[][N]){
 	int i, j;
-	for (i=0; i < gamemode; i++){
-		for(j=0; j < gamemode; j++){
+	for (i=0; i<gamemode; i++){
+		for(j=0; j<gamemode; j++){
 			matriz[i][j] = '\0';
 		}
 	}
 	return matriz[gamemode][gamemode];
 }
 
-void grid_display(int matriz[][N], int i , int j){
+void grid_display(int matriz[][N], int i, int j){
 
 	puts("| %d |", matriz[i][j]);
 	puts(" ____ ");
 }
 
-void classic_bot_of_doom(int matriz[][N], int gamemode, int i, int j){
-   int i,
-   	   bot_choice;
-   double r ;
-   srand (time(NULL)); /* inicializa o gerador de numeros pseudo-aleatorios */
-   for (i=0; i<gamemode; i++){
-   	  k1 = rand() % gamemode;
-   	  k2 = rand() % gamemode;
-   	  if(matriz[i][j] != '\0'){
-   	  	 bot_choice = rand() % 2;
-   	  }else{
-}
+void classic_bot_of_doom(int gamemode, int p_horiz_circulo, int p_vert_circulo){
+	
+	srand (time(NULL));
+	//if(matriz[i][j] == '/0') 
+	p_horiz_circulo = rand() % gamemode;
+	p_vert_circulo = rand() % gamemode;
+ }
 
-void classic_velha(int matriz[][N], int gamemode, int cpu_or_player){ 
+void classic_velha(int matriz[][N], int gamemode, int cpu_or_player){
+
 	int i, j,
 		diagonal1_w = 0, diagonal1_k = 0,
 		diagonal2_w = 0, diagonal2_k = 0,
@@ -106,10 +102,10 @@ void classic_velha(int matriz[][N], int gamemode, int cpu_or_player){
 						puts("digite a posicao horizontal e vertical, respectivamente:\n
 							(exemplo '11', '25', 53");
 						if(matriz[i][j] == '\0'){
-							scanf("%d%d", &p_horiz_xis, &p_vert_xis);
+							scanf("%d%d", &p_horiz_circulo, &p_vert_circulo);
 						}else{
 							printf("posicao ja ocupada, tente escolher outra ou perca a vez: \n");
-							scanf("%d%d", &p_horiz_xis, &p_vert_xis);
+							scanf("%d%d", &p_horiz_circulo, &p_vert_circulo);
 						}
 
 						//posiciona o 'X' na matriz
@@ -134,7 +130,7 @@ void classic_velha(int matriz[][N], int gamemode, int cpu_or_player){
 							scanf("%d%d", &p_horiz_xis, &p_vert_xis);
 						}
 						grid_display(matriz[gamemode][gamemode], i, j);
-						bot_of_doom(matriz[gamemode][gamemode], gamemode, i, j);
+						bot_of_doom(gamemode, p_horiz_circulo, p_vert_circulo);
 
 				break;
 			}
