@@ -43,17 +43,17 @@ Data: [16/10/2018]
 	}
 }
 */
-int fulfill_matrix(int matriz[][N]){
+int fulfill_matrix(char matriz[][N]){
 	int i, j;
 	for (i=0; i<gamemode; i++){
 		for(j=0; j<gamemode; j++){
-			matriz[i][j] = '\0';
+			matriz[i][j] = ' ';
 		}
 	}
 	return matriz[gamemode][gamemode];
 }
 
-void grid_display(int matriz[][N], int i, int j){
+void grid_display(char matriz[][N], int i, int j){
 
 	puts("| %d |", matriz[i][j]);
 	puts(" ____ ");
@@ -67,7 +67,7 @@ void classic_bot_of_doom(int gamemode, int p_horiz_circulo, int p_vert_circulo){
 	p_vert_circulo = rand() % gamemode;
  }
 
-void classic_velha(int matriz[][N], int gamemode, int cpu_or_player){
+void classic_velha(char matriz[][N], int gamemode, int cpu_or_player){
 
 	int i, j,
 		diagonal1_w = 0, diagonal1_k = 0,
@@ -91,8 +91,9 @@ void classic_velha(int matriz[][N], int gamemode, int cpu_or_player){
 						puts("Jogador 1, onde deseja colocar o xis - (X) ?");
 						puts("digite a posicao horizontal e vertical, respectivamente:\n
 							(exemplo '11', '25', 53");
-						if(matriz[i][j] == '\0'){
-							scanf("%d%d", &p_horiz_xis, &p_vert_xis);
+						scanf("%d%d", &p_horiz_xis, &p_vert_xis);
+						if(matriz[p_horiz_xis][p_vert_xis] == ' '){
+							matriz[p_horiz_xis][p_vert_xis] = 'x';
 						}else{
 							printf("posicao ja ocupada, tente escolher outra ou perca a vez: \n");
 							scanf("%d%d", &p_horiz_xis, &p_vert_xis);
@@ -101,14 +102,16 @@ void classic_velha(int matriz[][N], int gamemode, int cpu_or_player){
 						puts("Jogador 2, onde deseja colocar o circulo - (O) ?");
 						puts("digite a posicao horizontal e vertical, respectivamente:\n
 							(exemplo '11', '25', 53");
-						if(matriz[i][j] == '\0'){
-							scanf("%d%d", &p_horiz_circulo, &p_vert_circulo);
+						scanf("%d%d", &p_horiz_circulo, &p_vert_circulo);
+						if(matriz[p_horiz_circulo][p_vert_circulo] == ' '){
+							matriz[p_horiz_circulo][p_vert_circulo] = 'o';
+							
 						}else{
 							printf("posicao ja ocupada, tente escolher outra ou perca a vez: \n");
 							scanf("%d%d", &p_horiz_circulo, &p_vert_circulo);
 						}
 
-						//posiciona o 'X' na matriz
+						/*//posiciona o 'X' na matriz
 						if(i == p_horiz_xis && j = p_vert_xis){
 							matriz[i][j] = 'x';
 						}else{
@@ -116,21 +119,29 @@ void classic_velha(int matriz[][N], int gamemode, int cpu_or_player){
 							if(i == p_horiz_circulo && j = p_vert_circulo){
 								matriz[i][j] = 'o';
 							}
-						}
+						} */
 				break;
 				case 2:
 					    grid_display(matriz[gamemode][gamemode], i, j);
 						puts("Jogador 1, onde deseja colocar o xis - (X) ?");
 						puts("digite a posicao horizontal e vertical, respectivamente:\n
 							(exemplo '11', '25', 53");
-						if(matriz[i][j] == '\0'){
-							scanf("%d%d", &p_horiz_xis, &p_vert_xis);
+						scanf("%d%d", &p_horiz_xis, &p_vert_xis);
+						if(matriz[p_horiz_xis][p_vert_xis] == ' '){
+							matriz[p_horiz_xis][p_vert_xis] = 'x';
+						//if(matriz[i][j] == '\0'){//ta errado, em vez de i e j tem que ter as posicoes	
 						}else{
 							printf("posicao ja ocupada, tente escolher outra ou perca a vez: \n");
 							scanf("%d%d", &p_horiz_xis, &p_vert_xis);
 						}
 						grid_display(matriz[gamemode][gamemode], i, j);
 						bot_of_doom(gamemode, p_horiz_circulo, p_vert_circulo);
+						if(matriz[p_horiz_circulo][p_vert_circulo] == ' '){
+							matriz[p_horiz_circulo][p_vert_circulo] = 'o';
+							
+						}else{
+							bot_of_doom(gamemode, p_horiz_circulo, p_vert_circulo);
+						}
 
 				break;
 			}
