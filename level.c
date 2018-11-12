@@ -8,41 +8,6 @@ Data: [16/10/2018]
 #include<time.h>
 #define N 9
 
-/*int search_matrix(int matriz[][N], int gamemode){
-	int i, j;
-	int winner;
-	for (i=0; i < N; i++){
-		for(j=0; j < N; j++){
-
-			if (matriz[i][j]){
-				//venceu diagonal 1
-				winner = matriz[i][j]];
-			}else{
-				if(matriz [i][]){
-				//venceu diagonal 2 percorrendo ao contrário
-					winner = ;
-				}else{
-					if{
-					//venceu N horizontais
-						winner = ;
-					}else{
-						if{
-							//venceu N verticais
-							winner = ;
-						}
-					} 
-				}
-			}
-		}
-	}
-	if (){
-		puts("jogador __x__ venceu");
-	
-	}else{
-		puts("jodador __o__ venceu");
-	}
-}
-*/
 int fulfill_matrix(char matriz[][N]){
 	int i, j;
 	for (i=0; i<gamemode; i++){
@@ -110,16 +75,6 @@ void classic_velha(char matriz[][N], int gamemode, int cpu_or_player){
 							printf("posicao ja ocupada, tente escolher outra ou perca a vez: \n");
 							scanf("%d%d", &p_horiz_circulo, &p_vert_circulo);
 						}
-
-						/*//posiciona o 'X' na matriz
-						if(i == p_horiz_xis && j = p_vert_xis){
-							matriz[i][j] = 'x';
-						}else{
-						//posiciona o 'O' na matriz
-							if(i == p_horiz_circulo && j = p_vert_circulo){
-								matriz[i][j] = 'o';
-							}
-						} */
 				break;
 				case 2:
 					    grid_display(matriz[gamemode][gamemode], i, j);
@@ -224,16 +179,3 @@ void classic_velha(char matriz[][N], int gamemode, int cpu_or_player){
 		}
 	}
 }
-
-
-/*
-void easy(){
-}
-
-void medium(){
-}
-
-void hard(){
-}
-
-*/

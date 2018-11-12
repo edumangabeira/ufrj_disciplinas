@@ -66,33 +66,6 @@ int main(void){
 			check_mode = check_mode + 1;
 		while(check_mode <= 0)
 		}
-		/*	    
-		printf("Selecione a dificuldade do jogo:
-				\n\t1 - facil
-				\n\t2 - normal
-				\n\t3 - dificil");
-		scanf("%d",&nivel);
-		do{
-		switch(level){
-			case 1: level.easy();
-			break;
-
-			case 2: level.medium();
-			break;
-
-			case 3: level.hard();
-			break;
-
-			default: print("nivel invalido, tente novamente");
-			check_level = check_level - 1;
-			break;
-		}
-		check_level = check_level + 1;
-		while(check <= 0)
-		}
-	    */
-		//fulfill_matrix(matriz[gamemode][gamemode]);
-		//search_matrix(matriz[gamemode][gamemode], gamemode);
 		printf("Deseja jogar novamente?\n\n\t s- sim | n - nao");
 		scanf("%c",&again);
 		if(again != 's'){
