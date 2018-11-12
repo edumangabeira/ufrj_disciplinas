@@ -8,6 +8,7 @@ Data: [16/10/2018]
 #include<time.h>
 #define N 9
 
+//inicializa e preenche matriz com espacos vazios
 int fulfill_matrix(char matriz[][N]){
 	int i, j;
 	for (i=0; i<gamemode; i++){
@@ -18,12 +19,14 @@ int fulfill_matrix(char matriz[][N]){
 	return matriz[gamemode][gamemode];
 }
 
+//apresenta estado atual do jogo
 void grid_display(char matriz[][N], int i, int j){
 
 	puts("| %d |", matriz[i][j]);
 	puts(" ____ ");
 }
 
+//gera numero aleatorio para escolha de posicao do bot
 void classic_bot_of_doom(int gamemode, int p_horiz_circulo, int p_vert_circulo){
 	
 	srand (time(NULL));
@@ -32,6 +35,7 @@ void classic_bot_of_doom(int gamemode, int p_horiz_circulo, int p_vert_circulo){
 	p_vert_circulo = rand() % gamemode;
  }
 
+//executa jogo da velha padrao
 void classic_velha(char matriz[][N], int gamemode, int cpu_or_player){
 
 	int i, j,
@@ -44,6 +48,7 @@ void classic_velha(char matriz[][N], int gamemode, int cpu_or_player){
 		p_horiz_xis, p_horiz_circulo;		
 	bool diagonal_2 = ((i==1) && (j==3) || (i==2 && j==2) || (i=3 && j==1));
 
+	//preenche matriz de char com espacos vazios
 	matriz[gamemode][gamemode] = fulfill_matrix_zero(matriz[gamemode][gamemode]);  
 
 	for (i=0; i < gamemode; i++){

@@ -9,13 +9,12 @@ Data: [16/10/2018]
 
 int main(void){
 	int check_mode = 0, 
-		gamemode = 3;
-	int matriz[N][N];
-	int cpu_or_player,
+		gamemode = 3,
+		cpu_or_player,
 		valid_player = 1;
-	char again;
-	//float mat[N][M];
-	//fwrite(mat, sizeof(float), N*M, arq);
+	char again, 
+	matriz[N][N];//matriz do jogo
+
 	while(1){ 
 		//define o jogador a se enfrentar e checa se o valor eh valido
 		do{
