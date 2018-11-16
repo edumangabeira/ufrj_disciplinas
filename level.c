@@ -5,8 +5,15 @@ Data: [16/10/2018]
 #include<stdio.h>
 #include<stdbool.h>
 #include<stdlib.h>
-#include<time.h>
 #define N 9
+
+int verifica_pares(){
+
+}
+
+int verifica_impares(){
+
+}
 
 //inicializa e preenche matriz com espacos vazios
 int fulfill_matrix(char matriz[][N]){
@@ -51,7 +58,7 @@ void classic_velha(char matriz[][N], int gamemode, int cpu_or_player){
 	//preenche matriz de char com espacos vazios
 	matriz[gamemode][gamemode] = fulfill_matrix_zero(matriz[gamemode][gamemode]);  
 
-	for (i=0; i < gamemode; i++){
+	for(i=0; i < gamemode; i++){
 		horizontal_w = 0, horizontal_k = 0;
 		vertical_w = 0, vertical_k = 0;
 		for(j=0; j < gamemode; j++){
@@ -105,10 +112,19 @@ void classic_velha(char matriz[][N], int gamemode, int cpu_or_player){
 
 				break;
 			}
+
+			if(i > gamemode && gamemode == impar){
+				verifica_impares(matriz[gamemode][gamemode]);
+			}else{
+
+				if(i > gamemode && gamemode == par){
+					verifica_pares(matriz[gamemode][gamemode]);
+				}
+			}
 			//percorre diagonal 1
 			if((i==j) && (matriz[i][j] == 'x')){
 				diagonal1_w = diagonal1_w + 1;
-				if(diagonal1_w == 3){
+				if(diagonal1_w == gamemode){
 					ganha_x = 1;
 					break;
 				}
@@ -116,7 +132,7 @@ void classic_velha(char matriz[][N], int gamemode, int cpu_or_player){
 
 				if((i==j) && (matriz[i][j] == 'o')){
 					diagonal1_k = diagonal1_k + 1;
-					if(diagonal1_k == 3){
+					if(diagonal1_k == gamemode){
 						ganha_o = 1;
 						break;
 					}
@@ -125,14 +141,14 @@ void classic_velha(char matriz[][N], int gamemode, int cpu_or_player){
 			//percorre diagonal 2
 			if((diagonal_2) && (matriz[i][j] == 'x')){
 				diagonal2_w = diagonal2_w + 1;
-				if(diagonal2_w == 3){
+				if(diagonal2_w == gamemode){
 					ganha_x = 1;
 					break;
 				}
 			}else{
 				if((diagonal_2) && (matriz[i][j] == 'o')){
 					diagonal2_k = diagonal2_k + 1;
-					if(diagonal2_k == 3){
+					if(diagonal2_k == gamemode){
 						ganha_o = 1;
 						break;
 					}
@@ -141,7 +157,7 @@ void classic_velha(char matriz[][N], int gamemode, int cpu_or_player){
 			//percorre horizontais
 			if(matriz[i][j] == 'x'){
 				horizontal_w = horizontal_w + 1;
-				if(horizontal_w == 3){
+				if(horizontal_w == gamemode){
 					ganha_x = 1;
 					break;
 				}
@@ -149,7 +165,7 @@ void classic_velha(char matriz[][N], int gamemode, int cpu_or_player){
 
 				if(matriz[i][j] == 'o'){
 					horizontal_k = horizontal_k + 1;
-					if(horizontal_k == 3){
+					if(horizontal_k == gamemode){
 						ganha_o = 1;
 						break;
 					}
@@ -158,7 +174,7 @@ void classic_velha(char matriz[][N], int gamemode, int cpu_or_player){
 			//percorre verticais
 			if(matriz[j][i] == 'x'){
 				vertical_w = vertical_w + 1;
-				if(vertical_w == 3){
+				if(vertical_w == gamemode){
 					ganha_x = 1;
 					break;
 				}
@@ -166,7 +182,7 @@ void classic_velha(char matriz[][N], int gamemode, int cpu_or_player){
 
 				if(matriz[j][i] == 'o'){
 					vertical_k = vertical_k + 1;
-					if(vertical_k == 3){
+					if(vertical_k == gamemode){
 						ganha_o = 1;
 						break;
 					}
