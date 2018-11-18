@@ -68,7 +68,7 @@ int horizontais(char matriz[][N], int gamemode){
 	}
 	vence[0] = ganha_x;
 	vence[1] = ganha_o;
-	return vence[2];
+	return vence;
 }
 
 //percorre verticais
@@ -98,7 +98,7 @@ int verticais(char matriz[][N], int gamemode){
 	}
 	vence[0] = ganha_x;
 	vence[1] = ganha_o;
-	return vence[2];
+	return vence;
 }
 
 //diagonal da esquerda para a direita 
