@@ -3,7 +3,6 @@ Eduardo Freire Mangabeira
 Data: [16/10/2018]
 */
 #include<stdio.h>
-#include<stdlib.h>
 #include "level.h"
 #define N 9
 
@@ -41,7 +40,7 @@ int main(void){
 			scanf("%d",&gamemode);
 			switch(gamemode){
 				case 3,4,5,6,7,8,9: puts("\t\tO jogo se inicia!!!!!!!!!!! (ง •̀_•́)ง ผ(•̀_•́ผ) ");
-									level.jogo_da_velha(matriz[gamemode][gamemode],cpu_or_player);
+									level.jogo_da_velha(matriz[gamemode][gamemode], gamemode, cpu_or_player);
 				break;
 
 				default: puts("modo invalido, tente novamente ƪ(‾ε‾“)ʃ");

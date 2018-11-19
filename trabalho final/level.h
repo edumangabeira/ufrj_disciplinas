@@ -3,11 +3,9 @@ Eduardo Freire Mangabeira
 Data: [16/10/2018]
 */
 
-int preenche_matriz(char matriz[][N], gamemode);
+void exibe_tabuleiro(char matriz[][N], int gamemode);
 
-void exibe_tabuleiro(char matriz[][N], int i, int j);
-
-void bot_do_pandemonio(int gamemode, int p_horiz_circulo, int p_vert_circulo);
+void bot_do_pandemonio(char matriz[gamemode][gamemode], int gamemode, int p_horiz_circulo, int p_vert_circulo);
 
 int horizontais(char matriz[][N], int gamemode);
 

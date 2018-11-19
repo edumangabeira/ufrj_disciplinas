@@ -3,25 +3,20 @@ Eduardo Freire Mangabeira
 Data: [16/10/2018]
 */
 #include<stdio.h>
-#include<stdlib.h>
 #define N 9
 
-//inicializa e preenche matriz com espacos vazios
-char preenche_matriz(char matriz[][N], gamemode){
+//apresenta destado atual do jogo
+void exibe_tabuleiro(char matriz[][N], int gamemode){
 	int i, j;
 	for (i=0; i<gamemode; i++){
+		printf("\n");
+		printf("--------------------------------------------");
 		for(j=0; j<gamemode; j++){
-			matriz[i][j] = ' ';
+				printf("| %d |", matriz[i][j]);
 		}
 	}
-	return matriz[gamemode][gamemode];
-}
-
-//apresenta destado atual do jogo
-void exibe_tabuleiro(char matriz[][N], int p_horiz_xis, int p_vert_xis){
-	//garante que o tabuleiro seja apresentado com os valores atuais
-	if((p_horiz_xis !=0)&&(p_vert_xis != 0))
-		puts("| %d |", matriz[i][j]);
+	printf("--------------------------------------------");
+	printf("\n\n\n");
 }
 
 //gera numero aleatorio para escolha de posicao do bot
@@ -29,7 +24,7 @@ char bot_do_pandemonio(char matriz[gamemode][gamemode], int gamemode, int p_hori
 	int check_play = 0;
 	srand (time(NULL));
 	do{                                                      
-	if(matriz[gamemode][gamemode] == ' '){
+	if(matriz[p_horiz_circulo][p_vert_circulo] == ' '){
 		p_horiz_circulo = rand() % gamemode;
 		p_vert_circulo = rand() % gamemode;
 		return matriz[p_horiz_circulo][p_vert_circulo] = 'o';
@@ -43,7 +38,8 @@ char bot_do_pandemonio(char matriz[gamemode][gamemode], int gamemode, int p_hori
 
 //percorre horizontais
 int horizontais(char matriz[][N], int gamemode){
-	int horizontal_x, horizontal_o,
+	int horizontal_x, horizontal_o, 
+		i, j, 
 		vence[2]; 
 	for(i=0; i<gamemode; i++){
 		horizontal_x = 0; 
@@ -52,28 +48,27 @@ int horizontais(char matriz[][N], int gamemode){
 			if(matriz[i][j] == 'x' ){
 				horizontal_x = horizontal_x + 1;
 				if(horizontal_x == gamemode){
-					ganha_x = 1;
+					vence[0] = 1;
 					break;
 					}
 				}else{
 					if(matriz[i][j] == 'o'){
 						horizontal_o = horizontal_o + 1;
 						if(horizontal_o == gamemode){
-							ganha_o = 1;
+							vence[1] = 1;
 							break;
 						}
 					}
 				}
 		}
 	}
-	vence[0] = ganha_x;
-	vence[1] = ganha_o;
 	return vence;
 }
 
 //percorre verticais
 int verticais(char matriz[][N], int gamemode){
 	int vertical_x, vertical_o,
+		i, j, 
 		vence[2];
 	for(j=0; j<gamemode; j++){
 		vertical_x = 0;
@@ -82,75 +77,70 @@ int verticais(char matriz[][N], int gamemode){
 			if(matriz[i][j] == 'x'){
 				vertical_x = vertical_x + 1;
 				if(vertical_x == gamemode){
-					ganha_x = 1;
+					vence[0] = 1;
 					break;
 					}
 				}else{
 					if(matriz[i][j] == 'o'){
 						vertical_o = vertical_o + 1;
 						if(vertical_o == gamemode){
-							ganha_o = 1;
+							vence[1] = 1;
 							break;
 						}
 					}
 				}
 		}
 	}
-	vence[0] = ganha_x;
-	vence[1] = ganha_o;
 	return vence;
 }
 
-//diagonal da esquerda para a direita 
+//percorre diagonal da esquerda para a direita partindo de cima
 int diagonal1(char matriz[][N], int gamemode){
 	int diagonal1_x = 0, diagonal1_o = 0,
-	ganha_x = 0; ganha_x = 0;
+		i, j;
 	for(i=0; i<gamemode; i++){
 		for(j=0; j<gamemode; j++){
 			if((i==j) && (matriz[i][j] == 'x')){
 				diagonal1_x = diagonal1_x + 1;
 				if(diagonal1_x == gamemode){
-					ganha_x = 1;
+					vence[0]= 1;
 					break;
 				}
 			}else{
 				if((i==j) && (matriz[i][j] == 'o')){
 					diagonal1_o = diagonal1_o + 1;
 					if(diagonal1_o == gamemode){
-						ganha_o = 1;
+						vence[1] = 1;
 						break;
 					}
 				}
 			}
 		}
 	}
-	vence[0] = ganha_x;
-	vence[1] = ganha_o;
+
 	return vence;
 }
 
-//diagonal da direita para a esquerda
+//percorre diagonal da direita para a esquerda partindo de cima
 int diagonal2(char matriz[][N], int gamemode){
 
-	int i, j,ganha_x = 0, ganha_o =0,
+	int i, j,
 		diagonal2_x = 0, diagonal1_o = 0,
 		j = gamemode;
 		for (i=0; i>gamemode; i++){
 			if(matriz[i][j] == 'x'){
 				diagonal2_x ++;
 				if(diagonal2_x == gamemode)
-				ganha_x = 1;
+					vence[0] = 1;
 		}else{
 			if(matriz[i][j] == 'o'){
 				diagonal2_o ++;
 				if(diagonal2_o == gamemode)
-				ganha_o = 1;
+					vence[1] = 1;
 			}
 		}
 		j = j-1;
 	}
-	vence[0] = ganha_x;
-	vence[1] = ganha_o;
 	return vence;
 }
 
@@ -240,7 +230,7 @@ int v_longo(char matriz[][N], int gamemode){
 		quad = gamemode/2;//tamanho padrao de um quadrante
 
 	//o tamanho das matrizes se baseia no quadrante recortado
-	char aux_matriz_1[quad-1][quad], aux_matriz_2[quad-1][quad];
+	char aux_matriz_1[quad][quad], aux_matriz_2[quad][quad];
 
 	//percorre a primeira horizontal e verifica se tem x ou o no meio dela
 	//para matrizes de indices impares
@@ -457,27 +447,31 @@ int v_curto(matriz[][N], gamemode){
 	}
 }
 
-//executa jogo da velha padrao
+//executa jogo da velha
 void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 
 	int i, j,
-		ganha_x = 0, ganha_o = 0, velha = 0,
-		jogada_vs_bot = 0, jogada_vs_player =0;
-		p_vert_xis = 0,p_vert_circulo = 0,
-		p_horiz_xis = 0, p_horiz_circulo = 0;
-		check_play = 0;
+		ganha_x = 0, ganha_o = 0, //para verificar se houve vencedor
+		jogada_vs_bot = 0, jogada_vs_player =0; //conta o numero de jogadas efetuadas nos modos
+		p_vert_xis = 0,p_vert_circulo = 0,//coordenadas verticais do tabuleiro para x e o
+		p_horiz_xis = 0, p_horiz_circulo = 0; // coordenadas horizontais do tabuleiro para x e o
+		check_play = 0; //confere se jogada eh valida
 
 	int horizontais[2], verticais[2], diagonal1[2], diagonal2[2], piramide[2],v_curto[2], v_longo[2];		
 
-	//preenche matriz de char com espacos vazios
-	matriz[gamemode][gamemode] = fulfill_matrix_zero(matriz[gamemode][gamemode], gamemode);
+	//preenche matriz de char com espacos vazios(tabuleiro sem jogadas)
+	for (i=0; i<gamemode; i++){
+		for(j=0; j<gamemode; j++){
+			matriz[i][j] = ' ';
+		}
+	}
 
-	while(velha != 1 || ganha_x != 1 || ganha_o != 1){
+	while(play_num < gamemode*gamemode){
 		switch(cpu_or_player){
 			//jogo entre duas pessoas
 			case 1: do{
 						//precisa apenas dos valores da primeira jogada(do xis)
-						grid_display(matriz[gamemode][gamemode], p_horiz_xis, p_vert_xis);
+						exibe_tabuleiro(matriz[gamemode][gamemode], p_horiz_xis, p_vert_xis);
 						puts("Jogador 1, onde deseja colocar o xis - (X) ?");
 						puts("digite a posicao horizontal e vertical, respectivamente:\n
 							(exemplo '11', '25', 53");
@@ -493,7 +487,7 @@ void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 					}
 							
 					do{
-						grid_display(matriz[gamemode][gamemode], p_horiz_xis, p_vert_xis);
+						exibe_tabuleiro(matriz[gamemode][gamemode], p_horiz_xis, p_vert_xis);
 						puts("Jogador 2, onde deseja colocar o circulo - (O) ?");
 						puts("digite a posicao horizontal e vertical, respectivamente:\n
 							(exemplo '11', '25', 53");
@@ -506,14 +500,14 @@ void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 						}
 						check_play = check_play + 1;
 					while(check_play <= 0)
-				}
-					puts("--------------------------------------------");
+					}
+					//conta o numero de jogadas efetuadas no modo 1
 					jogada_vs_player ++;
 
 			break;
 			//jogo contra bot
 			case 2:
-				    grid_display(matriz[gamemode][gamemode], p_horiz_xis, p_vert_xis);
+				    exibe_tabuleiro(matriz[gamemode][gamemode], p_horiz_xis, p_vert_xis);
 				    do{
 						puts("Jogador 1, onde deseja colocar o xis - (X) ?");
 						puts("digite a posicao horizontal e vertical, respectivamente:\n
@@ -528,113 +522,125 @@ void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 						check_play = check_play + 1;
 					while(check_play <= 0)
 					}
-					grid_display(matriz[gamemode][gamemode], i, j);
+					exibe_tabuleiro(matriz[gamemode][gamemode], i, j);
 					//precisa apenas dos valores do circulo
 					bot_of_doom(gamemode, p_horiz_circulo, p_vert_circulo);
 					if(matriz[p_horiz_circulo][p_vert_circulo] == ' '){
 						matriz[p_horiz_circulo][p_vert_circulo] = 'o';
 						
 					}else{
-						bot_of_doom(gamemode, p_horiz_circulo, p_vert_circulo);
+						bot_do_pandemonio(gamemode, p_horiz_circulo, p_vert_circulo);
 					}
-
-					puts("--------------------------------------------");
+					//conta o numero de jogadas efetuadas no modo 2
 					jogada_vs_bot ++;
 					break;
-				}
+		}
 
-			//verifica se houve vencedor a partir da quantidade de jogadas necessarias para isso ocorrer
-				if(jogada_vs_player>(2*gamemode)-1 || jogada_vs_bot>(2*gamemode)-1){
+		//verifica se houve vencedor a partir da quantidade de jogadas necessarias para isso ocorrer
+		if(jogada_vs_player>(2*gamemode)-1 || jogada_vs_bot>(2*gamemode)-1){
 
-					//verifica horizontais
-					for(i=0; i<2; i++)
-					horizontais[i] = horizontais(matriz[gamemode][gamemode],gamemode)[i];
+			//verifica horizontais
+			for(i=0; i<2; i++)
+				horizontais[i] = horizontais(matriz[gamemode][gamemode],gamemode)[i];
 
-					if(horizontais[0] == 1){
-						ganha_x = 1;
-					}else{
-						if(horizontais[1] == 1)
-							ganha_o = 1;
-					}
-
-					//verifica verticais
-					for(i=0; i<2; i++)
-					verticais[i] = verticais(matriz[gamemode][gamemode],gamemode)[i];
-
-					if(verticais[0] == 1){
-						ganha_x = 1;
-					}else{
-						if(verticais[1] == 1)
-							ganha_o = 1;
-					}
-
-					//verifica diagonal 1
-					for(i=0; i<2; i++)
-					diagonal1[i] = diagonal1(matriz[gamemode][gamemode],gamemode)[i];
-
-					if(diagonal1[0] == 1){
-						ganha_x = 1;
-					}else{
-						if(diagonal1[1] == 1)
-							ganha_o = 1;
-					}
-
-					//verifica diagonal 2
-					for(i=0; i<2; i++)
-					diagonal2[i] = diagonal2(matriz[gamemode][gamemode],gamemode)[i];
-
-					if(diagonal2[0] == 1){
-						ganha_x = 1;
-					}else{
-						if(diagonal2[1] == 1)
-							ganha_o = 1;
-					}
-
-					//verifica formato de piramide
-					for(i=0; i<2; i++)
-					piramide[i] = piramide(matriz[gamemode][gamemode],gamemode)[i];
-
-					if(piramide[0] == 1){
-						ganha_x = 1;
-					}else{
-						if(piramide[1] == 1)
-							ganha_o = 1;
-					}
-
-					//verifica formato de v longo
-					for(i=0; i<2; i++)
-					v_longo[i] = v_longo(matriz[gamemode][gamemode],gamemode)[i];
-
-					if(v_longo[0] == 1){
-						ganha_x = 1;
-					}else{
-						if(v_longo[1] == 1)
-							ganha_o = 1;
-					}
-
-					//verifica formato de v curto
-					for(i=0; i<2; i++)
-					v_curto[i] = v_curto(matriz[gamemode][gamemode],gamemode)[i];
-
-					if(v_curto[0] == 1){
-						ganha_x = 1;
-					}else{
-						if(v_curto[1] == 1)
-							ganha_o = 1;
-					}
-				}
-
-			}
-
-			if(ganha_x == 1){
-				puts("jogador __x__ venceu");
-			}else{
-				if(ganha_o == 1){
-					puts("jogador __o__ venceu");
+			if(horizontais[0] == 1){
+				ganha_x = 1;
 				}else{
-					puts("Deu velha !!! ლ(ಠ_ಠლ) (╯°□°）╯︵ ┻━┻");
-					velha = 1;
+					if(horizontais[1] == 1)
+						ganha_o = 1;
+				}
+
+			//verifica verticais
+			for(i=0; i<2; i++)
+				verticais[i] = verticais(matriz[gamemode][gamemode],gamemode)[i];
+
+			if(verticais[0] == 1){
+				ganha_x = 1;
+				}else{
+					if(verticais[1] == 1)
+						ganha_o = 1;
+				}
+
+			//verifica diagonal 1
+			for(i=0; i<2; i++)
+				diagonal1[i] = diagonal1(matriz[gamemode][gamemode],gamemode)[i];
+
+			if(diagonal1[0] == 1){
+				ganha_x = 1;
+				}else{
+					if(diagonal1[1] == 1)
+						ganha_o = 1;
+				}
+
+			//verifica diagonal 2
+			for(i=0; i<2; i++)
+				diagonal2[i] = diagonal2(matriz[gamemode][gamemode],gamemode)[i];
+
+			if(diagonal2[0] == 1){
+				ganha_x = 1;
+				}else{
+					if(diagonal2[1] == 1)
+						ganha_o = 1;
+				}
+
+			//verifica formato de piramide
+			for(i=0; i<2; i++)
+				piramide[i] = piramide(matriz[gamemode][gamemode],gamemode)[i];
+
+			if(piramide[0] == 1){
+				ganha_x = 1;
+				}else{
+					if(piramide[1] == 1)
+						ganha_o = 1;
+				}
+
+			//verifica formato de v longo
+			for(i=0; i<2; i++)
+				v_longo[i] = v_longo(matriz[gamemode][gamemode],gamemode)[i];
+
+			if(v_longo[0] == 1){
+				ganha_x = 1;
+				}else{
+					if(v_longo[1] == 1)
+						ganha_o = 1;
+				}
+
+			//verifica formato de v curto
+			for(i=0; i<2; i++)
+				v_curto[i] = v_curto(matriz[gamemode][gamemode],gamemode)[i];
+
+			if(v_curto[0] == 1){
+				ganha_x = 1;
+				}else{
+					if(v_curto[1] == 1)
+						ganha_o = 1;
+				}
+		}
+
+		//para de executar se x vence
+		if(ganha_x == 1)
+			break;
+		
+		//para se o vence
+		if(ganha_o == 1)
+			break;
+				
+		play_num = play_num + 1;
+	}
+
+	if(ganha_x == 1){
+		puts("jogador __x__ venceu!!!!!!!!!!!!! UHUUUUUUUUL");
+			}else{
+				if(ganha_o == 1 && cpu_or_player == 1){
+					puts("jogador __o__ venceu!!!!!!!!!!!!!!!! ISSAAAAAAAAA");
+				}else{
+				if(ganha_o == 1 && cpu_or_player == 2){
+					puts("voce perdeu para a mais primitiva das MAQUINAS MUAHAHAHAHA");
+					}else{
+						puts("Deu velha !!! ლ(ಠ_ಠლ) (╯°□°）╯︵ ┻━┻");
 				}
 			}
 		}
+}
+
 
