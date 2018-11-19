@@ -1,6 +1,8 @@
 /*
 Eduardo Freire Mangabeira
-Data: [16/10/2018]
+Victoria de Andrade Azevedo
+Data de inicio: [16/10/2018]
+Data de conclusao: [17/11/2018]
 */
 #include<stdio.h>
 #include "level.h"
@@ -32,8 +34,8 @@ int main(void){
 					}
 				}
 			valid_player = valid_player + 1;
-		while(valid_player <= 0)
-		}
+		
+		}while(valid_player <= 0);
 
 		//define o modo de jogo e checa se ele eh valido
 		do{
@@ -49,8 +51,9 @@ int main(void){
 				break;
 				}
 			check_mode = check_mode + 1;
-		while(check_mode <= 0)
-		}
+		
+		}while(check_mode <= 0);
+
 		printf("Deseja jogar novamente?\n\n\t s- sim | n - nao\n\n");
 		scanf("%c",&again);
 		if(again != 's'){

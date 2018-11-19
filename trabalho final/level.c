@@ -20,20 +20,13 @@ void exibe_tabuleiro(char matriz[][N], int gamemode){
 }
 
 //gera numero aleatorio para escolha de posicao do bot
-char bot_do_pandemonio(char matriz[gamemode][gamemode], int gamemode, int p_horiz_circulo, int p_vert_circulo){
-	int check_play = 0;
+int bot_do_pandemonio(int gamemode){
+	int check_play = 0,
+	coord[2];
 	srand (time(NULL));
-	do{                                                      
-	if(matriz[p_horiz_circulo][p_vert_circulo] == ' '){
-		p_horiz_circulo = rand() % gamemode;
-		p_vert_circulo = rand() % gamemode;
-		return matriz[p_horiz_circulo][p_vert_circulo] = 'o';
-	}else{
-		check_play = check_play - 1;
-	}
-	check_play = check_play + 1;
-	while(check_play <= 0)
-	}	
+	coord[0] = rand() % gamemode;
+	coord[1] = rand() % gamemode;
+	return coord;                                                      
  }
 
 //percorre horizontais
@@ -470,68 +463,77 @@ void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 	while(play_num < gamemode*gamemode){
 		switch(cpu_or_player){
 			//jogo entre duas pessoas
-			case 1: do{
+			case 1: //valida a escolha de posicao 
+					do{
 						//precisa apenas dos valores da primeira jogada(do xis)
-						exibe_tabuleiro(matriz[gamemode][gamemode], p_horiz_xis, p_vert_xis);
+						exibe_tabuleiro(matriz[gamemode][gamemode], gamemode);
 						puts("Jogador 1, onde deseja colocar o xis - (X) ?");
 						puts("digite a posicao horizontal e vertical, respectivamente:\n
-							(exemplo '11', '25', 53");
+							(exemplo '01', '25', 53");
 						scanf("%d%d", &p_horiz_xis, &p_vert_xis);
 						if(matriz[p_horiz_xis][p_vert_xis] == ' '){
 							matriz[p_horiz_xis][p_vert_xis] = 'x';
 						}else{
-							printf("posicao ja ocupada, tente escolher outra ou perca a vez: \n");
+							printf("posicao invalida ou ja ocupada, tente escolher outra: \n");
 							check_play = check_play - 1;
 						}
 						check_play = check_play + 1;
-					while(check_play <= 0)
-					}
-							
+					
+					}while(check_play <= 0);
+
+					check_play = 0;
 					do{
-						exibe_tabuleiro(matriz[gamemode][gamemode], p_horiz_xis, p_vert_xis);
+						exibe_tabuleiro(matriz[gamemode][gamemode], gamemode);
 						puts("Jogador 2, onde deseja colocar o circulo - (O) ?");
 						puts("digite a posicao horizontal e vertical, respectivamente:\n
-							(exemplo '11', '25', 53");
+							(exemplo '01', '25', 53");
 						scanf("%d%d", &p_horiz_circulo, &p_vert_circulo);
 						if(matriz[p_horiz_circulo][p_vert_circulo] == ' '){
 							matriz[p_horiz_circulo][p_vert_circulo] = 'o';
 					}else{
-						printf("posicao ja ocupada, tente escolher outra ou perca a vez: \n");
+						printf("posicao invalida ja ocupada, tente escolher outra: \n");
 							check_play = check_play - 1;
 						}
 						check_play = check_play + 1;
-					while(check_play <= 0)
-					}
+
+					}while(check_play <= 0);
+					check_play = 0;
 					//conta o numero de jogadas efetuadas no modo 1
 					jogada_vs_player ++;
 
 			break;
 			//jogo contra bot
 			case 2:
-				    exibe_tabuleiro(matriz[gamemode][gamemode], p_horiz_xis, p_vert_xis);
+				    exibe_tabuleiro(matriz[gamemode][gamemode], gamemode);
 				    do{
 						puts("Jogador 1, onde deseja colocar o xis - (X) ?");
 						puts("digite a posicao horizontal e vertical, respectivamente:\n
-							(exemplo '11', '25', 53");
+							(exemplo '01', '25', 53");
 						scanf("%d%d", &p_horiz_xis, &p_vert_xis);
 						if(matriz[p_horiz_xis][p_vert_xis] == ' '){
 							matriz[p_horiz_xis][p_vert_xis] = 'x';	
 						}else{
-							printf("posicao ja ocupada, tente escolher outra ou perca a vez: \n");
+							printf("posicao invalida ou ja ocupada, tente escolher outra: \n");
 							check_play = check_play - 1;
 						}
 						check_play = check_play + 1;
-					while(check_play <= 0)
-					}
-					exibe_tabuleiro(matriz[gamemode][gamemode], i, j);
-					//inicia escolha aleatoria de posicao(precisa apenas dos valores do circulo)
-					bot_do_pandemonio(gamemode, p_horiz_circulo, p_vert_circulo);
-					if(matriz[p_horiz_circulo][p_vert_circulo] == ' '){
-						matriz[p_horiz_circulo][p_vert_circulo] = 'o';
-						
-					}else{
-						bot_do_pandemonio(gamemode, p_horiz_circulo, p_vert_circulo);
-					}
+					
+					}while(check_play <= 0);
+
+					check_play = 0;
+					exibe_tabuleiro(matriz[gamemode][gamemode], gamemode);
+					//inicia escolha aleatoria de posicao
+					do{
+						p_horiz_circulo = bot_do_pandemonio(gamemode)[0];
+						p_vert_circulo = bot_do_pandemonio(gamemode)[1];
+
+						if(matriz[p_horiz_circulo][p_vert_circulo] == ' '){
+							matriz[p_horiz_circulo][p_vert_circulo] = 'o';
+						}else{
+							check_play = check_play - 1;
+						}
+						check_play = check_play + 1;
+					}while(check_play <= 0);
 					//conta o numero de jogadas efetuadas no modo 2
 					jogada_vs_bot ++;
 					break;

@@ -5,7 +5,7 @@ Data: [16/10/2018]
 
 void exibe_tabuleiro(char matriz[][N], int gamemode);
 
-void bot_do_pandemonio(char matriz[gamemode][gamemode], int gamemode, int p_horiz_circulo, int p_vert_circulo);
+int bot_do_pandemonio(int gamemode);
 
 int horizontais(char matriz[][N], int gamemode);
 
