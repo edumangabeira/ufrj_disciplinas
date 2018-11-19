@@ -7,12 +7,13 @@ Data: [16/10/2018]
 #define N 9
 
 int main(void){
-	int check_mode = 0, 
-		gamemode = 3,
-		cpu_or_player,
-		valid_player = 1;
-	char again, 
-	matriz[N][N];//matriz do jogo
+	int cpu_or_player,		//guarda valor do tipo de jogador a se enfrentar
+		check_mode = 0,		//para checar se tipo de jogador a se enfrentar eh valido
+		valid_player = 0, 	//para checar se modo de jogo eh valido
+		gamemode;			//tamanho de uma dimensao do tabuleiro
+		
+	char again,			//guarda a resposta do jogador caso ele queira jogar outra partida
+	int matriz[N][N];	//tabuleiro do jogo
 
 	while(1){ 
 		//define o jogador a se enfrentar e checa se o valor eh valido

@@ -5,7 +5,7 @@ Data: [16/10/2018]
 #include<stdio.h>
 #define N 9
 
-//apresenta destado atual do jogo
+//apresenta estado atual do jogo
 void exibe_tabuleiro(char matriz[][N], int gamemode){
 	int i, j;
 	for (i=0; i<gamemode; i++){
@@ -457,7 +457,7 @@ void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 		p_horiz_xis = 0, p_horiz_circulo = 0; // coordenadas horizontais do tabuleiro para x e o
 		check_play = 0; //confere se jogada eh valida
 
-	int horizontais[2], verticais[2], diagonal1[2], diagonal2[2], piramide[2],v_curto[2], v_longo[2];		
+	int horizontais[2], verticais[2], diagonal1[2], diagonal2[2], piramide[2],v_curto[2], v_longo[2];//para armazenar possibilidades de vitoria		
 
 	//preenche matriz de char com espacos vazios(tabuleiro sem jogadas)
 	for (i=0; i<gamemode; i++){
@@ -466,6 +466,7 @@ void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 		}
 	}
 
+	//preenche a matriz vazia ate o fim
 	while(play_num < gamemode*gamemode){
 		switch(cpu_or_player){
 			//jogo entre duas pessoas
@@ -523,8 +524,8 @@ void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 					while(check_play <= 0)
 					}
 					exibe_tabuleiro(matriz[gamemode][gamemode], i, j);
-					//precisa apenas dos valores do circulo
-					bot_of_doom(gamemode, p_horiz_circulo, p_vert_circulo);
+					//inicia escolha aleatoria de posicao(precisa apenas dos valores do circulo)
+					bot_do_pandemonio(gamemode, p_horiz_circulo, p_vert_circulo);
 					if(matriz[p_horiz_circulo][p_vert_circulo] == ' '){
 						matriz[p_horiz_circulo][p_vert_circulo] = 'o';
 						
@@ -536,7 +537,7 @@ void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 					break;
 		}
 
-		//verifica se houve vencedor a partir da quantidade de jogadas necessarias para isso ocorrer
+		//verifica possibilidades de vitoria a partir da quantidade de jogadas necessarias para isso ocorrer
 		if(jogada_vs_player>(2*gamemode)-1 || jogada_vs_bot>(2*gamemode)-1){
 
 			//verifica horizontais
@@ -621,7 +622,7 @@ void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 		if(ganha_x == 1)
 			break;
 		
-		//para se o vence
+		//para de executar se o vence
 		if(ganha_o == 1)
 			break;
 				
