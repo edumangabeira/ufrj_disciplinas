@@ -17,7 +17,7 @@ int main(void){
 		gamemode;			//tamanho de uma dimensao do tabuleiro
 		
 	char again,			//guarda a resposta do jogador caso ele queira jogar outra partida
-	int matriz[N][N];	//tabuleiro do jogo
+	int matriz[][N];	//tabuleiro do jogo
 
 	while(1){ 
 		//define o jogador a se enfrentar e checa se o valor eh valido
