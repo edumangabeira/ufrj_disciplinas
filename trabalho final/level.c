@@ -8,7 +8,7 @@ Data: [16/10/2018]
 #define N 9
 
 //apresenta estado atual do jogo
-void exibe_tabuleiro(char matriz[][N], int gamemode){
+void exibe_tabuleiro(char matriz[N][N], int gamemode){
 	int i, j;
 	for (i=0; i<gamemode; i++){
 		printf("\n");
@@ -31,7 +31,7 @@ int *bot_do_pandemonio(int gamemode){
  }
 
 //percorre horizontais
-int *horizontais(char matriz[][N], int gamemode){
+int *horizontais(char matriz[N][N], int gamemode){
 	int horizontal_x, horizontal_o, 
 		i, j;
 	static int vence_h[2];
@@ -60,7 +60,7 @@ int *horizontais(char matriz[][N], int gamemode){
 }
 
 //percorre verticais
-int *verticais(char matriz[][N], int gamemode){
+int *verticais(char matriz[N][N], int gamemode){
 	int vertical_x, vertical_o,
 		i, j; 
 	static int vence_vert[2];
@@ -89,7 +89,7 @@ int *verticais(char matriz[][N], int gamemode){
 }
 
 //percorre diagonal da esquerda para a direita partindo de cima
-int *diagonal1(char matriz[][N], int gamemode){
+int *diagonal1(char matriz[N][N], int gamemode){
 	int diagonal1_x = 0, diagonal1_o = 0,
 		i, j;
 	static int vence_d1[2];
@@ -117,7 +117,7 @@ int *diagonal1(char matriz[][N], int gamemode){
 }
 
 //percorre diagonal da direita para a esquerda partindo de cima
-int *diagonal2(char matriz[][N], int gamemode){s
+int *diagonal2(char matriz[N][N], int gamemode){s
 
 	int i, j,
 		diagonal2_x = 0, diagonal2_o = 0;
@@ -141,7 +141,7 @@ int *diagonal2(char matriz[][N], int gamemode){s
 }
 
 //funcao que verifica se o jogador venceu no formato de piramide
-int *piramide(char matriz[][N], int gamemode){
+int *piramide(char matriz[N][N], int gamemode){
 
 	int i, j, k=0, w=0, v_soma_x = 0, v_soma_o = 0,
 		quad = gamemode/2; //tamanho padrao de um quadrante
@@ -213,7 +213,7 @@ int *piramide(char matriz[][N], int gamemode){
 }
 
 //funcao que verifica se o jogador venceu no formato de V
-int *v_longo(char matriz[][N], int gamemode){
+int *v_longo(char matriz[N][N], int gamemode){
 
 	int i, j, k = 0, w = 0, v_soma_x = 0, v_soma_o = 0,
 		quad = gamemode/2;//tamanho padrao de um quadrante
@@ -286,7 +286,7 @@ int *v_longo(char matriz[][N], int gamemode){
 }
 
 //verifica o formato de V com uma das "pernas" mais curta
-int *v_curto(matriz[][N], gamemode){
+int *v_curto(matriz[N][N], gamemode){
 
 	int i, j, k=0, w=0,
 	quad = gamemode/2; //tamanho padrao de um quadrante
@@ -439,7 +439,7 @@ int *v_curto(matriz[][N], gamemode){
 }
 
 //executa jogo da velha
-void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
+void jogo_da_velha(char matriz[N][N], int gamemode, int cpu_or_player){
 
 	int i, j,
 		ganha_x = 0, ganha_o = 0, //para verificar se houve vencedor
