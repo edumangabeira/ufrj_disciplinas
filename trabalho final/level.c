@@ -146,8 +146,8 @@ int* piramide(char matriz[][N], int gamemode){
 		quad = gamemode/2; //tamanho padrao de um quadrante
 	static int vence_p[2];
 	int *aux_diagonal1_p,*aux_diagonal2_p;
-	aux_diagonal1_p = malloc(sizeof(int*2));
-	aux_diagonal2_p = malloc(sizeof(int*2));
+	aux_diagonal1_p = malloc(sizeof(int)*2);
+	aux_diagonal2_p = malloc(sizeof(int)*2);
 
 	//o tamanho das matrizes se baseia no quadrante recortado
 	char aux_matriz_1[quad][quad], aux_matriz_2[quad][quad];
@@ -222,8 +222,8 @@ int* v_longo(char matriz[][N], int gamemode){
 		quad = gamemode/2;//tamanho padrao de um quadrante
 	static int vence_vl[2];
 	int *aux_diagonal1_vl, *aux_diagonal2_vl;
-	aux_diagonal1_vl = malloc(sizeof(int*2));
-	aux_diagonal2_vl = malloc(sizeof(int*2));		
+	aux_diagonal1_vl = malloc(sizeof(int)*2);
+	aux_diagonal2_vl = malloc(sizeof(int)*2);		
 	//o tamanho das matrizes se baseia no quadrante recortado
 	char aux_matriz_1[quad][quad], aux_matriz_2[quad][quad];
 
@@ -299,8 +299,8 @@ int* v_curto(matriz[][N], gamemode){
 	quad = gamemode/2; //tamanho padrao de um quadrante
 	static int vence_vc[2];
 	int *aux_diagonal1_vc,*aux_diagonal2_vc;
-	aux_diagonal1_vc = malloc(sizeof(int*2));
-	aux_diagonal2_vc = malloc(sizeof(int*2));
+	aux_diagonal1_vc = malloc(sizeof(int)*2);
+	aux_diagonal2_vc = malloc(sizeof(int)*2);
 	//o tamanho das matrizes se baseia no quadrante recortado
 	char aux_matriz_1[quad][quad], aux_matriz_2[quad][quad],
 		aux_matriz_3[quad][quad], aux_matriz_4[quad][quad];
@@ -461,16 +461,16 @@ void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 		play_num = 0;   //conta a rodada atual
 
 	int *dimensoes_bot;//ponteiro que guarda posicao (x,y) escolhida pelo bot
-	dimensoes_bot = malloc(sizeof(int*2));
+	dimensoes_bot = malloc(sizeof(int)*2);
 
 	int *vence_horizontais, *vence_verticais, *vence_diagonal1, *vence_diagonal2, *vence_piramide,*vence_v_curto, *vence_v_longo;//para armazenar possibilidades de vitoria
-	vence_horizontais =  malloc(sizeof(int*2));
-	vence_verticais = malloc(sizeof(int*2));
-	vence_diagonal1 = malloc(sizeof(int*2));
-	vence_diagonal2 = malloc(sizeof(int*2));
-	vence_piramide = malloc(sizeof(int*2));
-	vence_v_curto = malloc(sizeof(int*2));
-	vence_v_longo = malloc(sizeof(int*2));
+	vence_horizontais =  malloc(sizeof(int)*2);
+	vence_verticais = malloc(sizeof(int)*2);
+	vence_diagonal1 = malloc(sizeof(int)*2);
+	vence_diagonal2 = malloc(sizeof(int)*2);
+	vence_piramide = malloc(sizeof(int)*2);
+	vence_v_curto = malloc(sizeof(int)*2);
+	vence_v_longo = malloc(sizeof(int)*2);
 	//preenche matriz de char com espacos vazios(tabuleiro sem jogadas)
 	for (i=0; i<gamemode; i++){
 		for(j=0; j<gamemode; j++){
