@@ -117,7 +117,7 @@ int *diagonal1(char matriz[][N], int gamemode){
 }
 
 //percorre diagonal da direita para a esquerda partindo de cima
-int *diagonal2(char matriz[][N], int gamemode){
+int *diagonal2(char matriz[][N], int gamemode){s
 
 	int i, j,
 		diagonal2_x = 0, diagonal2_o = 0;
@@ -450,7 +450,7 @@ void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 		play_num = 0;   //conta a rodada atual
 
 	int *dimensoes_bot;//ponteiro que guarda posicao (x,y) escolhida pelo bot
-	int *horizontais, *verticais, *diagonal1, *diagonal2, *piramide,*v_curto, *v_longo;//para armazenar possibilidades de vitoria		
+	int *vence_horizontais, *vence_verticais, *vence_diagonal1, *vence_diagonal2, *vence_piramide,*vence_v_curto, *vence_v_longo;//para armazenar possibilidades de vitoria		
 	//preenche matriz de char com espacos vazios(tabuleiro sem jogadas)
 	for (i=0; i<gamemode; i++){
 		for(j=0; j<gamemode; j++){
@@ -539,79 +539,65 @@ void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 		if(jogada_vs_player>(2*gamemode)-1 || jogada_vs_bot>(2*gamemode)-1){
 
 			//verifica horizontais
-			for(i=0; i<2; i++)
-				horizontais[i] = horizontais(matriz[gamemode][gamemode],gamemode)[i];
-
-			if(horizontais[0] == 1){
+			vence_horizontais = horizontais(matriz[gamemode][gamemode],gamemode);
+			if(vence_horizontais[0] == 1){
 				ganha_x = 1;
 				}else{
-					if(horizontais[1] == 1)
+					if(vence_horizontais[1] == 1)
 						ganha_o = 1;
 				}
 
 			//verifica verticais
-			for(i=0; i<2; i++)
-				verticais[i] = verticais(matriz[gamemode][gamemode],gamemode)[i];
-
-			if(verticais[0] == 1){
+			vence_verticais = verticais(matriz[gamemode][gamemode],gamemode);
+			if(vence_verticais[0] == 1){
 				ganha_x = 1;
 				}else{
-					if(verticais[1] == 1)
+					if(vence_verticais[1] == 1)
 						ganha_o = 1;
 				}
 
 			//verifica diagonal 1
-			for(i=0; i<2; i++)
-				diagonal1[i] = diagonal1(matriz[gamemode][gamemode],gamemode)[i];
-
-			if(diagonal1[0] == 1){
+			vence_diagonal1 = diagonal1(matriz[gamemode][gamemode],gamemode);
+			if(vence_diagonal1[0] == 1){
 				ganha_x = 1;
 				}else{
-					if(diagonal1[1] == 1)
+					if(vence_diagonal1[1] == 1)
 						ganha_o = 1;
 				}
 
 			//verifica diagonal 2
-			for(i=0; i<2; i++)
-				diagonal2[i] = diagonal2(matriz[gamemode][gamemode],gamemode)[i];
-
-			if(diagonal2[0] == 1){
+			vence_diagonal2 = diagonal2(matriz[gamemode][gamemode],gamemode);
+			if(vence_diagonal2[0] == 1){
 				ganha_x = 1;
 				}else{
-					if(diagonal2[1] == 1)
+					if(vence_diagonal2[1] == 1)
 						ganha_o = 1;
 				}
 
 			//verifica formato de piramide
-			for(i=0; i<2; i++)
-				piramide[i] = piramide(matriz[gamemode][gamemode],gamemode)[i];
-
-			if(piramide[0] == 1){
+			vence_piramide= piramide(matriz[gamemode][gamemode],gamemode);
+			if(vence_piramide[0] == 1){
 				ganha_x = 1;
 				}else{
-					if(piramide[1] == 1)
+					if(vence_piramide[1] == 1)
 						ganha_o = 1;
 				}
 
 			//verifica formato de v longo
-			for(i=0; i<2; i++)
-				v_longo[i] = v_longo(matriz[gamemode][gamemode],gamemode)[i];
-
-			if(v_longo[0] == 1){
+			vence_v_longo = v_longo(matriz[gamemode][gamemode],gamemode);
+			if(vence_v_longo[0] == 1){
 				ganha_x = 1;
 				}else{
-					if(v_longo[1] == 1)
+					if(vence_v_longo[1] == 1)
 						ganha_o = 1;
 				}
 
 			//verifica formato de v curto
-			for(i=0; i<2; i++)
-				v_curto[i] = v_curto(matriz[gamemode][gamemode],gamemode)[i];
-
-			if(v_curto[0] == 1){
+			vence_v_curto = v_curto(matriz[gamemode][gamemode],gamemode);
+			if(vence_v_curto[0] == 1){
 				ganha_x = 1;
 				}else{
-					if(v_curto[1] == 1)
+					if(vence_v_curto[1] == 1)
 						ganha_o = 1;
 				}
 		}
