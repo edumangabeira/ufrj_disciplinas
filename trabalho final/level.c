@@ -2,7 +2,9 @@
 Eduardo Freire Mangabeira
 Data: [16/10/2018]
 */
+#include<stdlib.h>
 #include<stdio.h>
+#include<time.h>
 #define N 9
 
 //apresenta estado atual do jogo
@@ -20,9 +22,8 @@ void exibe_tabuleiro(char matriz[][N], int gamemode){
 }
 
 //gera numero aleatorio para escolha de posicao do bot
-int bot_do_pandemonio(int gamemode){
-	int check_play = 0,
-	coord[2];
+int *bot_do_pandemonio(int gamemode){
+	static int coord[2];
 	srand (time(NULL));
 	coord[0] = rand() % gamemode;
 	coord[1] = rand() % gamemode;
@@ -30,10 +31,10 @@ int bot_do_pandemonio(int gamemode){
  }
 
 //percorre horizontais
-int horizontais(char matriz[][N], int gamemode){
+int *horizontais(char matriz[][N], int gamemode){
 	int horizontal_x, horizontal_o, 
-		i, j, 
-		vence[2]; 
+		i, j;
+	static int vence_h[2];
 	for(i=0; i<gamemode; i++){
 		horizontal_x = 0; 
 		horizontal_o = 0;
@@ -41,28 +42,28 @@ int horizontais(char matriz[][N], int gamemode){
 			if(matriz[i][j] == 'x' ){
 				horizontal_x = horizontal_x + 1;
 				if(horizontal_x == gamemode){
-					vence[0] = 1;
+					vence_h[0] = 1;
 					break;
 					}
 				}else{
 					if(matriz[i][j] == 'o'){
 						horizontal_o = horizontal_o + 1;
 						if(horizontal_o == gamemode){
-							vence[1] = 1;
+							vence_h[1] = 1;
 							break;
 						}
 					}
 				}
 		}
 	}
-	return vence;
+	return vence_h;
 }
 
 //percorre verticais
-int verticais(char matriz[][N], int gamemode){
+int *verticais(char matriz[][N], int gamemode){
 	int vertical_x, vertical_o,
-		i, j, 
-		vence[2];
+		i, j; 
+	static int vence_vert[2];
 	for(j=0; j<gamemode; j++){
 		vertical_x = 0;
 		vertical_o = 0;
@@ -70,40 +71,41 @@ int verticais(char matriz[][N], int gamemode){
 			if(matriz[i][j] == 'x'){
 				vertical_x = vertical_x + 1;
 				if(vertical_x == gamemode){
-					vence[0] = 1;
+					vence_vert[0] = 1;
 					break;
 					}
 				}else{
 					if(matriz[i][j] == 'o'){
 						vertical_o = vertical_o + 1;
 						if(vertical_o == gamemode){
-							vence[1] = 1;
+							vence_vert[1] = 1;
 							break;
 						}
 					}
 				}
 		}
 	}
-	return vence;
+	return vence_vert;
 }
 
 //percorre diagonal da esquerda para a direita partindo de cima
-int diagonal1(char matriz[][N], int gamemode){
+int *diagonal1(char matriz[][N], int gamemode){
 	int diagonal1_x = 0, diagonal1_o = 0,
 		i, j;
+	static int vence_d1[2];
 	for(i=0; i<gamemode; i++){
 		for(j=0; j<gamemode; j++){
 			if((i==j) && (matriz[i][j] == 'x')){
 				diagonal1_x = diagonal1_x + 1;
 				if(diagonal1_x == gamemode){
-					vence[0]= 1;
+					vence_d1[0]= 1;
 					break;
 				}
 			}else{
 				if((i==j) && (matriz[i][j] == 'o')){
 					diagonal1_o = diagonal1_o + 1;
 					if(diagonal1_o == gamemode){
-						vence[1] = 1;
+						vence_d1[1] = 1;
 						break;
 					}
 				}
@@ -111,38 +113,40 @@ int diagonal1(char matriz[][N], int gamemode){
 		}
 	}
 
-	return vence;
+	return vence_d1;
 }
 
 //percorre diagonal da direita para a esquerda partindo de cima
-int diagonal2(char matriz[][N], int gamemode){
+int *diagonal2(char matriz[][N], int gamemode){
 
 	int i, j,
-		diagonal2_x = 0, diagonal1_o = 0,
-		j = gamemode;
+		diagonal2_x = 0, diagonal2_o = 0;
+	static int vence_d2[2];
+	j = gamemode;
 		for (i=0; i>gamemode; i++){
 			if(matriz[i][j] == 'x'){
 				diagonal2_x ++;
 				if(diagonal2_x == gamemode)
-					vence[0] = 1;
+					vence_d2[0] = 1;
 		}else{
 			if(matriz[i][j] == 'o'){
 				diagonal2_o ++;
 				if(diagonal2_o == gamemode)
-					vence[1] = 1;
+					vence_d2[1] = 1;
 			}
 		}
 		j = j-1;
 	}
-	return vence;
+	return vence_d2;
 }
 
 //funcao que verifica se o jogador venceu no formato de piramide
-int piramide(char matriz[][N], int gamemode){
+int *piramide(char matriz[][N], int gamemode){
 
 	int i, j, k=0, w=0, v_soma_x = 0, v_soma_o = 0,
-		quad = gamemode/2, //tamanho padrao de um quadrante
-		vence[2], diagonal1[2], diagonal2[2];
+		quad = gamemode/2; //tamanho padrao de um quadrante
+	static int vence_p[2];
+	int *aux_diagonal1_p,*aux_diagonal2_p;
 
 	//o tamanho das matrizes se baseia no quadrante recortado
 	char aux_matriz_1[quad][quad], aux_matriz_2[quad][quad];
@@ -180,12 +184,9 @@ int piramide(char matriz[][N], int gamemode){
 		}
 		k++;
 	}
-
-	for(i=0; i<2; i++)
-		diagonal2[i] = diagonal2(aux_matriz_1[quad][quad], gamemode)[i];
-	
-	v_soma_x = v_soma_x + diagonal2[0];
-	v_soma_o = v_soma_o + diagonal2[1];
+	aux_diagonal2_p = diagonal2(aux_matriz_1[quad][quad], gamemode);
+	v_soma_x = v_soma_x + aux_diagonal2_p[0];
+	v_soma_o = v_soma_o + aux_diagonal2_p[1];
 
 	w=0, k=0;
 	//recorta quadrante e percorre a segunda parte diagonal
@@ -196,32 +197,28 @@ int piramide(char matriz[][N], int gamemode){
 			}
 		k++;
 	}
-	
-	for(i=0; i<2; i++)
-		diagonal1[i] = diagonal1(aux_matriz_2[quad][quad], gamemode)[i];
-	
-	v_soma_x = v_soma_x + diagonal1[0];
-	v_soma_o = v_soma_o + diagonal1[1];
+	aux_diagonal1_p = diagonal1(aux_matriz_2[quad][quad], gamemode);
+	v_soma_x = v_soma_x + aux_diagonal1_p[0];
+	v_soma_o = v_soma_o + aux_diagonal1_p[1];
 
 	//verifica se houve vencedor
 	if(v_soma_x == 3){
-			vence[0] = 1;
+			vence_p[0] = 1;
 			}else{
+					vence_p[1] = 1;
 				if(v_soma_o == 3){
-					vence[1] = 1;
 				}
 	}
-	return vence;
+	return vence_p;
 }
 
 //funcao que verifica se o jogador venceu no formato de V
-int v_longo(char matriz[][N], int gamemode){
+int *v_longo(char matriz[][N], int gamemode){
 
 	int i, j, k = 0, w = 0, v_soma_x = 0, v_soma_o = 0,
-		diagonal1[2], diagonal2[2],
-		vence[2],
 		quad = gamemode/2;//tamanho padrao de um quadrante
-
+	static int vence_vl[2];
+	int *aux_diagonal1_vl, *aux_diagonal2_vl;		
 	//o tamanho das matrizes se baseia no quadrante recortado
 	char aux_matriz_1[quad][quad], aux_matriz_2[quad][quad];
 
@@ -259,9 +256,9 @@ int v_longo(char matriz[][N], int gamemode){
 		k++;
 		}
 
-	diagonal1[i] = diagonal1(aux_matriz_1[quad-1][quad], gamemode)[i];
-	v_soma_x = v_soma_x + diagonal1[0];
-	v_soma_o = v_soma_o + diagonal1[1];
+	aux_diagonal1_vl = diagonal1(aux_matriz_1[quad-1][quad], gamemode);
+	v_soma_x = v_soma_x + aux_diagonal1_vl[0];
+	v_soma_o = v_soma_o + aux_diagonal1_vl[1];
 
 	//recorta quadrante e percorre segunda parte diagonal
 	w=0, k=0;
@@ -273,27 +270,28 @@ int v_longo(char matriz[][N], int gamemode){
 		k++;
 	}
 
-	diagonal2[i] = diagonal2(aux_matriz_2[quad-1][quad], gamemode)[i];
-	v_soma_x = v_soma_x + diagonal2[0];
-	v_soma_o = v_soma_o + diagonal2[1];
+	aux_diagonal2_vl = diagonal2(aux_matriz_2[quad-1][quad], gamemode);
+	v_soma_x = v_soma_x + aux_diagonal2_vl[0];
+	v_soma_o = v_soma_o + aux_diagonal2_vl[1];
 
 	//verifica se houve vencedor
 	if(v_soma_x == 3){
-			vence[0] = 1;
+			vence_vl[0] = 1;
 			}else{
 				if(v_soma_o == 3){
-					vence[1] = 1;
+					vence_vl[1] = 1;
 				}
 	}
-	return vence;
+	return vence_vl;
 }
 
 //verifica o formato de V com uma das "pernas" mais curta
-int v_curto(matriz[][N], gamemode){
+int *v_curto(matriz[][N], gamemode){
 
 	int i, j, k=0, w=0,
-	quad = gamemode/2, //tamanho padrao de um quadrante
-	vence[2], diagonal1[2], diagonal2[2];
+	quad = gamemode/2; //tamanho padrao de um quadrante
+	static int vence_vc[2];
+	int *aux_diagonal1_vc,*aux_diagonal2_vc;
 	//o tamanho das matrizes se baseia no quadrante recortado
 	char aux_matriz_1[quad][quad], aux_matriz_2[quad][quad],
 		aux_matriz_3[quad][quad], aux_matriz_4[quad][quad];
@@ -307,9 +305,9 @@ int v_curto(matriz[][N], gamemode){
 		k++;
 	}
 
-	diagonal1[i] = diagonal1(aux_matriz_1[quad][quad], gamemode)[i];
-	v_soma_x = v_soma_x + diagonal1[0];
-	v_soma_o = v_soma_o + diagonal1[1];
+	aux_diagonal1_vc = diagonal1(aux_matriz_1[quad][quad], gamemode);
+	v_soma_x = v_soma_x + aux_diagonal1_vc[0];
+	v_soma_o = v_soma_o + aux_diagonal1_vc[1];
 
 	if(matriz[gamemode-1][gamemode] == 'x'){
 		 v_soma_x ++;
@@ -322,13 +320,13 @@ int v_curto(matriz[][N], gamemode){
 	}
 
 	if(v_soma_x = 2){
-		vence[0] = 1;
-		return vence;
+		vence_vc[0] = 1;
+		return vence_vc;
 
 	}else{
 		if(v_soma_o = 2){
-			vence[1] = 1;
-			return vence;
+			vence_vc[1] = 1;
+			return vence_vc;
 		}
 	}
 
@@ -343,9 +341,9 @@ int v_curto(matriz[][N], gamemode){
 		k++;
 	}
 
-	diagonal1[i] = diagonal1(aux_matriz_2[quad][quad], gamemode)[i];
-	v_soma_x = v_soma_x + diagonal1[0];
-	v_soma_o = v_soma_o + diagonal1[1];
+	aux_diagonal1_vc = diagonal1(aux_matriz_2[quad][quad], gamemode);
+	v_soma_x = v_soma_x + aux_diagonal1_vc[0];
+	v_soma_o = v_soma_o + aux_diagonal1_vc[1];
 
 	if(matriz[gamemode][gamemode-1] == 'x'){
 		v_soma_x ++;
@@ -358,13 +356,13 @@ int v_curto(matriz[][N], gamemode){
 		}	
 
 	if(v_soma_x = 2){
-		vence[0] = 1;
-		return vence;
+		vence_vc[0] = 1;
+		return vence_vc;
 
 	}else{
 		if(v_soma_o = 2){
-			vence[1] = 1;
-			return vence;
+			vence_vc[1] = 1;
+			return vence_vc;
 		}
 	}
 
@@ -379,9 +377,9 @@ int v_curto(matriz[][N], gamemode){
 		k++;
 	}
 
-	diagonal2[i] = diagonal2(aux_matriz_3[quad][quad], gamemode)[i];
-	v_soma_x = v_soma_x + diagonal2[0];
-	v_soma_o = v_soma_o + diagonal2[1];
+	aux_diagonal2_vc = diagonal2(aux_matriz_3[quad][quad], gamemode);
+	v_soma_x = v_soma_x + aux_diagonal2_vc[0];
+	v_soma_o = v_soma_o + aux_diagonal2_vc[1];
 
 	if(matriz[gamemode-1][1] == 'x') {
 		 v_soma_x ++;
@@ -394,13 +392,13 @@ int v_curto(matriz[][N], gamemode){
 		}
 
 	if(v_soma_x = 2){
-		vence[0] = 1;
-		return vence;
+		vence_vc[0] = 1;
+		return vence_vc;
 
 	}else{
 		if(v_soma_o = 2){
-			vence[1] = 1;
-			return vence;
+			vence_vc[1] = 1;
+			return vence_vc;
 		}
 	}
 
@@ -415,9 +413,9 @@ int v_curto(matriz[][N], gamemode){
 		k++;
 	}
 
-	diagonal2[i] = diagonal2(aux_matriz_4[quad][quad], gamemode)[i];
-	v_soma_x = v_soma_x + diagonal2[0];
-	v_soma_o = v_soma_o + diagonal2[1];
+	aux_diagonal2_vc = diagonal2(aux_matriz_4[quad][quad], gamemode);
+	v_soma_x = v_soma_x + aux_diagonal2_vc[0];
+	v_soma_o = v_soma_o + aux_diagonal2_vc[1];
 
 	if(matriz[gamemode][1] == 'x'){
 		v_soma_x++;
@@ -429,13 +427,13 @@ int v_curto(matriz[][N], gamemode){
 			}
 		}
 	if(v_soma_x = 2){
-		vence[0] = 1;
-		return vence;
+		vence_vc[0] = 1;
+		return vence_vc;
 
 	}else{
 		if(v_soma_o = 2){
-			vence[1] = 1;
-			return vence;
+			vence_vc[1] = 1;
+			return vence_vc;
 		}
 	}
 }
@@ -445,22 +443,22 @@ void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 
 	int i, j,
 		ganha_x = 0, ganha_o = 0, //para verificar se houve vencedor
-		jogada_vs_bot = 0, jogada_vs_player =0; //conta o numero de jogadas efetuadas nos modos
+		jogada_vs_bot = 0, jogada_vs_player = 0, //conta o numero de jogadas efetuadas nos modos
 		p_vert_xis = 0,p_vert_circulo = 0,//coordenadas verticais do tabuleiro para x e o
-		p_horiz_xis = 0, p_horiz_circulo = 0; // coordenadas horizontais do tabuleiro para x e o
-		check_play = 0; //confere se jogada eh valida
+		p_horiz_xis = 0, p_horiz_circulo = 0, // coordenadas horizontais do tabuleiro para x e o
+		check_play = 0, //confere se jogada eh valida
+		play_num = 0;   //conta a rodada atual
 
-	int horizontais[2], verticais[2], diagonal1[2], diagonal2[2], piramide[2],v_curto[2], v_longo[2];//para armazenar possibilidades de vitoria		
-
+	int *dimensoes_bot;//ponteiro que guarda posicao (x,y) escolhida pelo bot
+	int *horizontais, *verticais, *diagonal1, *diagonal2, *piramide,*v_curto, *v_longo;//para armazenar possibilidades de vitoria		
 	//preenche matriz de char com espacos vazios(tabuleiro sem jogadas)
 	for (i=0; i<gamemode; i++){
 		for(j=0; j<gamemode; j++){
 			matriz[i][j] = ' ';
 		}
 	}
-
 	//preenche a matriz vazia ate o fim
-	while(play_num < gamemode*gamemode){
+	while(play_num < gamemode){
 		switch(cpu_or_player){
 			//jogo entre duas pessoas
 			case 1: //valida a escolha de posicao 
@@ -468,8 +466,7 @@ void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 						//precisa apenas dos valores da primeira jogada(do xis)
 						exibe_tabuleiro(matriz[gamemode][gamemode], gamemode);
 						puts("Jogador 1, onde deseja colocar o xis - (X) ?");
-						puts("digite a posicao horizontal e vertical, respectivamente:\n
-							(exemplo '01', '25', 53");
+						puts("digite a posicao horizontal e vertical, respectivamente:\n(exemplo 10, 25, 06, 53)");
 						scanf("%d%d", &p_horiz_xis, &p_vert_xis);
 						if(matriz[p_horiz_xis][p_vert_xis] == ' '){
 							matriz[p_horiz_xis][p_vert_xis] = 'x';
@@ -485,8 +482,7 @@ void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 					do{
 						exibe_tabuleiro(matriz[gamemode][gamemode], gamemode);
 						puts("Jogador 2, onde deseja colocar o circulo - (O) ?");
-						puts("digite a posicao horizontal e vertical, respectivamente:\n
-							(exemplo '01', '25', 53");
+						puts("digite a posicao horizontal e vertical, respectivamente:\n(exemplo 10, 25, 06, 53)");
 						scanf("%d%d", &p_horiz_circulo, &p_vert_circulo);
 						if(matriz[p_horiz_circulo][p_vert_circulo] == ' '){
 							matriz[p_horiz_circulo][p_vert_circulo] = 'o';
@@ -507,8 +503,7 @@ void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 				    exibe_tabuleiro(matriz[gamemode][gamemode], gamemode);
 				    do{
 						puts("Jogador 1, onde deseja colocar o xis - (X) ?");
-						puts("digite a posicao horizontal e vertical, respectivamente:\n
-							(exemplo '01', '25', 53");
+						puts("digite a posicao horizontal e vertical, respectivamente:\n(exemplo 10, 25, 06, 53)");
 						scanf("%d%d", &p_horiz_xis, &p_vert_xis);
 						if(matriz[p_horiz_xis][p_vert_xis] == ' '){
 							matriz[p_horiz_xis][p_vert_xis] = 'x';	
@@ -524,8 +519,9 @@ void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 					exibe_tabuleiro(matriz[gamemode][gamemode], gamemode);
 					//inicia escolha aleatoria de posicao
 					do{
-						p_horiz_circulo = bot_do_pandemonio(gamemode)[0];
-						p_vert_circulo = bot_do_pandemonio(gamemode)[1];
+						dimensoes_bot = bot_do_pandemonio(gamemode)
+						p_horiz_circulo = dimensoes_bot[0];
+						p_vert_circulo = dimensoes_bot[1];
 
 						if(matriz[p_horiz_circulo][p_vert_circulo] == ' '){
 							matriz[p_horiz_circulo][p_vert_circulo] = 'o';

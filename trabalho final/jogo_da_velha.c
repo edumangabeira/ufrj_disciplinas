@@ -4,7 +4,9 @@ Victoria de Andrade Azevedo
 Data de inicio: [16/10/2018]
 Data de conclusao: [17/11/2018]
 */
+#include<stdlib.h>
 #include<stdio.h>
+#include<time.h>
 #include "level.h"
 #define N 9
 
