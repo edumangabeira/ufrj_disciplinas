@@ -6,6 +6,7 @@ Data: [16/10/2018]
 #include<stdio.h>
 #include<time.h>
 #define N 9
+#define M 2
 
 //apresenta estado atual do jogo
 void exibe_tabuleiro(char matriz[][N], int gamemode){
@@ -144,8 +145,8 @@ int* piramide(char matriz[][N], int gamemode){
 		quad = gamemode/2; //tamanho padrao de um quadrante
 	static int vence_p[2];
 	int *aux_diagonal1_p,*aux_diagonal2_p;
-	aux_diagonal1_p = malloc(sizeof(int)*2);
-	aux_diagonal2_p = malloc(sizeof(int)*2);
+	aux_diagonal1_p = malloc(M * sizeof(int));
+	aux_diagonal2_p = malloc(M * sizeof(int));
 
 	//o tamanho das matrizes se baseia no quadrante recortado
 	char aux_matriz_1[quad][quad], aux_matriz_2[quad][quad];
@@ -204,8 +205,8 @@ int* piramide(char matriz[][N], int gamemode){
 				if(v_soma_o == 3){
 				}
 	}
-	free(aux_diagonal1_p);
-	free(aux_diagonal2_p);
+	/*free(aux_diagonal1_p);
+	free(aux_diagonal2_p);*/
 	return vence_p;
 }
 
@@ -216,8 +217,8 @@ int* v_longo(char matriz[][N], int gamemode){
 		quad = gamemode/2;//tamanho padrao de um quadrante
 	static int vence_vl[2];
 	int *aux_diagonal1_vl, *aux_diagonal2_vl;
-	aux_diagonal1_vl = malloc(sizeof(int)*2);
-	aux_diagonal2_vl = malloc(sizeof(int)*2);		
+	aux_diagonal1_vl = malloc(M * sizeof(int));
+	aux_diagonal2_vl = malloc(M * sizeof(int));		
 	//o tamanho das matrizes se baseia no quadrante recortado
 	char aux_matriz_1[quad][quad], aux_matriz_2[quad][quad];
 
@@ -277,8 +278,8 @@ int* v_longo(char matriz[][N], int gamemode){
 					vence_vl[1] = 1;
 				}
 	}
-	free(aux_diagonal1_vl); 
-	free(aux_diagonal2_vl);
+	/*free(aux_diagonal1_vl); 
+	free(aux_diagonal2_vl);*/
 	return vence_vl;
 }
 
@@ -289,8 +290,8 @@ int* v_curto(char matriz[][N], int gamemode){
 	quad = gamemode/2; //tamanho padrao de um quadrante
 	static int vence_vc[2];
 	int *aux_diagonal1_vc,*aux_diagonal2_vc;
-	aux_diagonal1_vc = malloc(sizeof(int)*2);
-	aux_diagonal2_vc = malloc(sizeof(int)*2);
+	aux_diagonal1_vc = malloc(M * sizeof(int));
+	aux_diagonal2_vc = malloc(M * sizeof(int));
 	//o tamanho das matrizes se baseia no quadrante recortado
 	char aux_matriz_1[quad][quad], aux_matriz_2[quad][quad],
 		aux_matriz_3[quad][quad], aux_matriz_4[quad][quad];
@@ -430,15 +431,15 @@ int* v_curto(char matriz[][N], int gamemode){
 			return vence_vc;
 		}
 	}
-	free(aux_diagonal1_vc);
-	free(aux_diagonal2_vc);
+	/*free(aux_diagonal1_vc);
+	free(aux_diagonal2_vc);*/
 	return vence_vc;
 }
 
 //executa jogo da velha
 void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 
-	int i, j,
+	int i, j, k,
 		ganha_x = 0, ganha_o = 0, //para verificar se houve vencedor
 		jogada_vs_bot = 0, jogada_vs_player = 0, //conta o numero de jogadas efetuadas nos modos
 		p_vert_xis = 0,p_vert_circulo = 0,//coordenadas verticais do tabuleiro para x e o
@@ -447,16 +448,16 @@ void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 		play_num = 0;   //conta a rodada atual
 
 	int *dimensoes_bot;//ponteiro que guarda posicao (x,y) escolhida pelo bot
-	dimensoes_bot = malloc(sizeof(int)*2);
+	dimensoes_bot = malloc(M * sizeof(int));
 
 	int *vence_horizontais, *vence_verticais, *vence_diagonal1, *vence_diagonal2, *vence_piramide,*vence_v_curto, *vence_v_longo;//para armazenar possibilidades de vitoria
-	vence_horizontais =  malloc(sizeof(int)*2);
-	vence_verticais = malloc(sizeof(int)*2);
-	vence_diagonal1 = malloc(sizeof(int)*2);
-	vence_diagonal2 = malloc(sizeof(int)*2);
-	vence_piramide = malloc(sizeof(int)*2);
-	vence_v_curto = malloc(sizeof(int)*2);
-	vence_v_longo = malloc(sizeof(int)*2);
+	vence_horizontais =  malloc(M * sizeof(int));
+	vence_verticais = malloc(M * sizeof(int));
+	vence_diagonal1 = malloc(M * sizeof(int));
+	vence_diagonal2 = malloc(M * sizeof(int));
+	vence_piramide = malloc(M * sizeof(int));
+	vence_v_curto = malloc(M * sizeof(int));
+	vence_v_longo = malloc(M * sizeof(int));
 	//preenche matriz de char com espacos vazios(tabuleiro sem jogadas)
 	for (i=0; i<gamemode; i++){
 		for(j=0; j<gamemode; j++){
@@ -464,7 +465,7 @@ void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 		}
 	}
 	//preenche a matriz vazia ate o fim
-	while(play_num < gamemode){
+	for(k=play_num; k<gamemode*gamemode; k++){
 		switch(cpu_or_player){
 			//jogo entre duas pessoas
 			case 1: //valida a escolha de posicao 
@@ -542,7 +543,7 @@ void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 		}
 
 		//verifica possibilidades de vitoria a partir da quantidade de jogadas necessarias para isso ocorrer
-		if(jogada_vs_player>(2*gamemode)-1 || jogada_vs_bot>(2*gamemode)-1){
+		if(jogada_vs_player>gamemode-1 || jogada_vs_bot>gamemode-1){
 
 			//verifica horizontais
 			vence_horizontais = horizontais(matriz,gamemode);
@@ -608,15 +609,10 @@ void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 				}
 		}
 
-		//para de executar se x vence
-		if(ganha_x == 1)
-			break;
-		
-		//para de executar se o vence
-		if(ganha_o == 1)
+		//para de executar se houver vencedor
+		if(ganha_x == 1 || ganha_o == 1)
 			break;
 				
-		play_num = play_num + 1;
 	}
 
 	if(ganha_x == 1){
@@ -641,5 +637,6 @@ void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 	free(vence_v_curto);
 	free(vence_v_longo); */
 }
+
 
 

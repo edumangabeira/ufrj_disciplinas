@@ -9,6 +9,7 @@ Data de conclusao: [17/11/2018]
 #include<time.h>
 #include "level.h"
 #define N 9
+#define M 2
 
 int main(void){
 	int cpu_or_player,		//guarda valor do tipo de jogador a se enfrentar
@@ -16,10 +17,10 @@ int main(void){
 		valid_player = 0, 	//para checar se modo de jogo eh valido
 		gamemode;			//tamanho de uma dimensao do tabuleiro
 		
-	char again;			//guarda a resposta do jogador caso ele queira jogar outra partida
+	//char again;			//guarda a resposta do jogador caso ele queira jogar outra partida
 	char matriz[N][N];	//tabuleiro do jogo
 
-	while(1){ 
+	//while(1){ 
 		//define o jogador a se enfrentar e checa se o valor eh valido
 		do{
 			puts("Deseja enfrentar outro jogador ou a nossa poderosa inteligencia articifial?? (◣_◢)\n\n\tDIGITE 1 para se juntar a outro jogador ou\n\tDIGITE 2 para aceitar o seu destino tragico ヽ༼ຈل͜ຈ༽ﾉ\n");
@@ -56,11 +57,10 @@ int main(void){
 		
 		}while(check_mode <= 0);
 
-		printf("Deseja jogar novamente?\n\n\t s- sim | n - nao\n\n");
+		/*printf("Deseja jogar novamente?\n\n\t s- sim | n - nao\n\n");
 		scanf("%c",&again);
-		if(again != 's'){
+		if(again != 's')
 			break;
-		}
-	}
+	}*/
 	return 0;
 }
