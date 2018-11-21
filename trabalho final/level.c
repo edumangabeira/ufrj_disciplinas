@@ -34,6 +34,8 @@ int* horizontais(char matriz[][N], int gamemode){
 	int horizontal_x, horizontal_o, 
 		i, j;
 	static int vence_h[2];
+	vence_h[0] = 0;
+	vence_h[1] = 0;
 	for(i=0; i<gamemode; i++){
 		horizontal_x = 0; 
 		horizontal_o = 0;
@@ -63,6 +65,8 @@ int* verticais(char matriz[][N], int gamemode){
 	int vertical_x, vertical_o,
 		i, j; 
 	static int vence_vert[2];
+	vence_vert[0] = 0;
+	vence_vert[1] = 0;
 	for(j=0; j<gamemode; j++){
 		vertical_x = 0;
 		vertical_o = 0;
@@ -92,6 +96,8 @@ int* diagonal1(char matriz[][N], int gamemode){
 	int diagonal1_x = 0, diagonal1_o = 0,
 		i, j;
 	static int vence_d1[2];
+	vence_d1[0]= 0;
+	vence_d1[1]= 0;
 	for(i=0; i<gamemode; i++){
 		for(j=0; j<gamemode; j++){
 			if((i==j) && (matriz[i][j] == 'x')){
@@ -120,8 +126,10 @@ int* diagonal2(char matriz[][N], int gamemode){
 	int i, j,
 		diagonal2_x = 0, diagonal2_o = 0;
 	static int vence_d2[2];
+	vence_d2[0] = 0;
+	vence_d2[1] = 0;
 	j = gamemode;
-		for (i=0; i>gamemode; i++){
+		for (i=0; i<gamemode; i++){
 			if(matriz[i][j] == 'x'){
 				diagonal2_x ++;
 				if(diagonal2_x == gamemode)
@@ -144,6 +152,8 @@ int* piramide(char matriz[][N], int gamemode){
 	int i, j, k=0, w=0, v_soma_x = 0, v_soma_o = 0,
 		quad = gamemode/2; //tamanho padrao de um quadrante
 	static int vence_p[2];
+	vence_p[0] = 0;
+	vence_p[1] = 0;
 	int *aux_diagonal1_p,*aux_diagonal2_p;
 	aux_diagonal1_p = malloc(M * sizeof(int));
 	aux_diagonal2_p = malloc(M * sizeof(int));
@@ -186,8 +196,8 @@ int* piramide(char matriz[][N], int gamemode){
 
 	w=0; k=0;
 	//recorta quadrante e percorre a segunda parte diagonal
-	for(i=1;i>quad; i++){
-		for(j=quad; j>gamemode; j++){
+	for(i=1;i<quad; i++){
+		for(j=quad; j<gamemode; j++){
 			aux_matriz_2[k][w] = matriz[i][j];
 			w++;
 			}
@@ -216,6 +226,8 @@ int* v_longo(char matriz[][N], int gamemode){
 	int i, j, k = 0, w = 0, v_soma_x = 0, v_soma_o = 0,
 		quad = gamemode/2;//tamanho padrao de um quadrante
 	static int vence_vl[2];
+	vence_vl[0] = 0;
+	vence_vl[1] = 0;
 	int *aux_diagonal1_vl, *aux_diagonal2_vl;
 	aux_diagonal1_vl = malloc(M * sizeof(int));
 	aux_diagonal2_vl = malloc(M * sizeof(int));		
@@ -245,7 +257,7 @@ int* v_longo(char matriz[][N], int gamemode){
 	
 	//recorta quadrante e percorre a primeira parte diagonal
 	for(i=1;i<quad; i++){
-		for(j=0; j>quad; j++){
+		for(j=0; j<quad; j++){
 			aux_matriz_1[k][w] = matriz[i][j];
 			w++;
 			}
@@ -289,6 +301,8 @@ int* v_curto(char matriz[][N], int gamemode){
 	int i, j, k=0, w=0, v_soma_o = 0, v_soma_x = 0,
 	quad = gamemode/2; //tamanho padrao de um quadrante
 	static int vence_vc[2];
+	vence_vc[0] = 0;
+	vence_vc[1] = 0;
 	int *aux_diagonal1_vc,*aux_diagonal2_vc;
 	aux_diagonal1_vc = malloc(M * sizeof(int));
 	aux_diagonal2_vc = malloc(M * sizeof(int));
@@ -297,8 +311,8 @@ int* v_curto(char matriz[][N], int gamemode){
 		aux_matriz_3[quad][quad], aux_matriz_4[quad][quad];
 
 	//partindo de [1][0] da esquerda para a direita
-	for(i=1;i>gamemode; i++){
-		for(j=0; j>gamemode-1; j++){
+	for(i=1;i<gamemode; i++){
+		for(j=0; j<gamemode-1; j++){
 			aux_matriz_1[k][w] = matriz[i][j];
 			w++;
 			}
@@ -332,8 +346,8 @@ int* v_curto(char matriz[][N], int gamemode){
 	v_soma_o = 0;
 	v_soma_x = 0;
 	//partindo de [0][1] da esquerda para a direita
-	for(i=0;i>gamemode; i++){
-		for(j=1; j>gamemode; j++){
+	for(i=0;i<gamemode; i++){
+		for(j=1; j<gamemode; j++){
 			aux_matriz_2[k][w] = matriz[i][j];
 			w++;
 			}
@@ -367,8 +381,8 @@ int* v_curto(char matriz[][N], int gamemode){
 	v_soma_o = 0;
 	v_soma_x = 0;
 	//partindo de [1][0] da direita para a esquerda 
-	for(i=1;i>gamemode; i++){
-		for(j=N; j>gamemode-1; j++){
+	for(i=1;i<gamemode; i++){
+		for(j=0; j<gamemode-1; j++){
 			aux_matriz_3[k][w] = matriz[i][j];
 			w++;
 			}
@@ -402,8 +416,8 @@ int* v_curto(char matriz[][N], int gamemode){
 	v_soma_o = 0;
 	v_soma_x = 0;
     //partindo de [0][N-1] da direita para a esquerda
-	for(i=0;i>gamemode; i++){
-		for(j=gamemode-1; j>gamemode; j++){
+	for(i=0;i<gamemode; i++){
+		for(j=1; j<gamemode; j++){
 			aux_matriz_4[k][w] = matriz[i][j];
 			w++;
 			}
@@ -546,7 +560,6 @@ void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 
 		//verifica possibilidades de vitoria a partir da quantidade de jogadas necessarias para isso ocorrer
 		if(jogada_vs_player>(2*gamemode)-1 || jogada_vs_bot>(2*gamemode)-1){
-
 			//verifica horizontais
 			vence_horizontais = horizontais(matriz,gamemode);
 			if(vence_horizontais[0] == 1){
@@ -555,7 +568,6 @@ void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 					if(vence_horizontais[1] == 1)
 						ganha_o = 1;
 				}
-
 			//verifica verticais
 			vence_verticais = verticais(matriz,gamemode);
 			if(vence_verticais[0] == 1){
@@ -564,7 +576,6 @@ void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 					if(vence_verticais[1] == 1)
 						ganha_o = 1;
 				}
-
 			//verifica diagonal 1
 			vence_diagonal1 = diagonal1(matriz,gamemode);
 			if(vence_diagonal1[0] == 1){
@@ -573,7 +584,6 @@ void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 					if(vence_diagonal1[1] == 1)
 						ganha_o = 1;
 				}
-
 			//verifica diagonal 2
 			vence_diagonal2 = diagonal2(matriz,gamemode);
 			if(vence_diagonal2[0] == 1){
@@ -582,7 +592,6 @@ void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 					if(vence_diagonal2[1] == 1)
 						ganha_o = 1;
 				}
-
 			//verifica formato de piramide
 			vence_piramide= piramide(matriz,gamemode);
 			if(vence_piramide[0] == 1){
@@ -591,7 +600,6 @@ void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 					if(vence_piramide[1] == 1)
 						ganha_o = 1;
 				}
-
 			//verifica formato de v longo
 			vence_v_longo = v_longo(matriz,gamemode);
 			if(vence_v_longo[0] == 1){
@@ -600,7 +608,6 @@ void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 					if(vence_v_longo[1] == 1)
 						ganha_o = 1;
 				}
-
 			//verifica formato de v curto
 			vence_v_curto = v_curto(matriz,gamemode);
 			if(vence_v_curto[0] == 1){
@@ -610,13 +617,10 @@ void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 						ganha_o = 1;
 				}
 		}
-
 		//para de executar se houver vencedor
 		if(ganha_x == 1 || ganha_o == 1)
-			break;
-				
+			break;		
 	}
-
 	if(ganha_x == 1){
 		puts("jogador __x__ venceu!!!!!!!!!!!!! UHUUUUUUUUL");
 			}else{
@@ -639,6 +643,3 @@ void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 	free(vence_v_curto);
 	free(vence_v_longo); */
 }
-
-
-
