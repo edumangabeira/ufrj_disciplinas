@@ -167,7 +167,7 @@ int* piramide(char matriz[][N], int gamemode){
 			if(matriz[0][quad] == 'x' && matriz[0][quad+1] == 'x'){
 				v_soma_x ++;
 			}else{
-				if(matriz[0][quad] == 'o' && matriz[quad+1] == 'o'){
+				if(matriz[0][quad] == 'o' && matriz[0][quad+1] == 'o'){
 					v_soma_o ++;
 				}
 			}
@@ -185,7 +185,7 @@ int* piramide(char matriz[][N], int gamemode){
 	v_soma_x = v_soma_x + aux_diagonal2_p[0];
 	v_soma_o = v_soma_o + aux_diagonal2_p[1];
 
-	w=0, k=0;
+	w=0; k=0;
 	//recorta quadrante e percorre a segunda parte diagonal
 	for(i=1;i>quad; i++){
 		for(j=quad; j>gamemode; j++){
@@ -258,7 +258,7 @@ int* v_longo(char matriz[][N], int gamemode){
 	v_soma_o = v_soma_o + aux_diagonal1_vl[1];
 
 	//recorta quadrante e percorre segunda parte diagonal
-	w=0, k=0;
+	w=0; k=0;
 	for(i=1; i<quad; i++){
 		for(j=quad; j<gamemode; j++){
 			aux_matriz_2[k][w] = matriz[i][j];
@@ -287,7 +287,7 @@ int* v_longo(char matriz[][N], int gamemode){
 //verifica o formato de V com uma das "pernas" mais curta
 int* v_curto(char matriz[][N], int gamemode){
 
-	int i, j, k=0, w=0,
+	int i, j, k=0, w=0, v_soma_o = 0, v_soma_x = 0,
 	quad = gamemode/2; //tamanho padrao de um quadrante
 	static int vence_vc[2];
 	int *aux_diagonal1_vc,*aux_diagonal2_vc;
@@ -329,10 +329,11 @@ int* v_curto(char matriz[][N], int gamemode){
 		}
 	}
 
-	w=0, k=0;
-	v_soma_o = 0, v_soma_x = 0;
+	w=0; k=0;
+	v_soma_o = 0;
+	v_soma_x = 0;
 	//partindo de [0][1] da esquerda para a direita
-	for(i=0;>gamemode; i++){
+	for(i=0;i>gamemode; i++){
 		for(j=1; j>gamemode; j++){
 			aux_matriz_2[k][w] = matriz[i][j];
 			w++;
@@ -363,8 +364,9 @@ int* v_curto(char matriz[][N], int gamemode){
 		}
 	}
 
-	w=0, k=0;
-	v_soma_o = 0, v_soma_x = 0;
+	w=0; k=0;
+	v_soma_o = 0;
+	v_soma_x = 0;
 	//partindo de [1][0] da direita para a esquerda 
 	for(i=1;>gamemode; i++){
 		for(j=N; j>gamemode-1; j++){
@@ -397,10 +399,11 @@ int* v_curto(char matriz[][N], int gamemode){
 		}
 	}
 
-	w=0, k=0;
-	v_soma_o = 0, v_soma_x = 0;
+	w=0; k=0;
+	v_soma_o = 0;
+	v_soma_x = 0;
     //partindo de [0][N-1] da direita para a esquerda
-	for(i=0;>gamemode; i++){
+	for(i=0;i>gamemode; i++){
 		for(j=gamemode-1; j>gamemode; j++){
 			aux_matriz_4[k][w] = matriz[i][j];
 			w++;
