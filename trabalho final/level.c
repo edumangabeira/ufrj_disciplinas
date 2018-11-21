@@ -318,12 +318,12 @@ int* v_curto(char matriz[][N], int gamemode){
 		}
 	}
 
-	if(v_soma_x = 2){
+	if(v_soma_x == 2){
 		vence_vc[0] = 1;
 		return vence_vc;
 
 	}else{
-		if(v_soma_o = 2){
+		if(v_soma_o == 2){
 			vence_vc[1] = 1;
 			return vence_vc;
 		}
@@ -353,12 +353,12 @@ int* v_curto(char matriz[][N], int gamemode){
 			}
 		}	
 
-	if(v_soma_x = 2){
+	if(v_soma_x == 2){
 		vence_vc[0] = 1;
 		return vence_vc;
 
 	}else{
-		if(v_soma_o = 2){
+		if(v_soma_o == 2){
 			vence_vc[1] = 1;
 			return vence_vc;
 		}
@@ -368,7 +368,7 @@ int* v_curto(char matriz[][N], int gamemode){
 	v_soma_o = 0;
 	v_soma_x = 0;
 	//partindo de [1][0] da direita para a esquerda 
-	for(i=1;>gamemode; i++){
+	for(i=1;i>gamemode; i++){
 		for(j=N; j>gamemode-1; j++){
 			aux_matriz_3[k][w] = matriz[i][j];
 			w++;
@@ -388,12 +388,12 @@ int* v_curto(char matriz[][N], int gamemode){
 			}
 		}
 
-	if(v_soma_x = 2){
+	if(v_soma_x == 2){
 		vence_vc[0] = 1;
 		return vence_vc;
 
 	}else{
-		if(v_soma_o = 2){
+		if(v_soma_o == 2){
 			vence_vc[1] = 1;
 			return vence_vc;
 		}
@@ -422,12 +422,12 @@ int* v_curto(char matriz[][N], int gamemode){
 				v_soma_o++;
 			}
 		}
-	if(v_soma_x = 2){
+	if(v_soma_x == 2){
 		vence_vc[0] = 1;
 		return vence_vc;
 
 	}else{
-		if(v_soma_o = 2){
+		if(v_soma_o == 2){
 			vence_vc[1] = 1;
 			return vence_vc;
 		}
