@@ -160,8 +160,6 @@ int* piramide(char matriz[][N], int gamemode){
 			}else{
 				if(matriz[0][quad] == 'o'){
 					v_soma_o ++;
-				}else{
-					return -1;
 				}
 			}
 		}else{
@@ -171,8 +169,6 @@ int* piramide(char matriz[][N], int gamemode){
 			}else{
 				if(matriz[0][quad] == 'o' && matriz[quad+1] == 'o'){
 					v_soma_o ++;
-				}else{
-					return -1;
 				}
 			}
 	}
@@ -185,7 +181,7 @@ int* piramide(char matriz[][N], int gamemode){
 		}
 		k++;
 	}
-	aux_diagonal2_p = diagonal2(aux_matriz_1[quad][quad], gamemode);
+	aux_diagonal2_p = diagonal2(aux_matriz_1, gamemode);
 	v_soma_x = v_soma_x + aux_diagonal2_p[0];
 	v_soma_o = v_soma_o + aux_diagonal2_p[1];
 
@@ -198,7 +194,7 @@ int* piramide(char matriz[][N], int gamemode){
 			}
 		k++;
 	}
-	aux_diagonal1_p = diagonal1(aux_matriz_2[quad][quad], gamemode);
+	aux_diagonal1_p = diagonal1(aux_matriz_2, gamemode);
 	v_soma_x = v_soma_x + aux_diagonal1_p[0];
 	v_soma_o = v_soma_o + aux_diagonal1_p[1];
 
@@ -235,8 +231,6 @@ int* v_longo(char matriz[][N], int gamemode){
 			}else{
 				if(matriz[gamemode][quad] == 'o'){
 					v_soma_o ++;
-				}else{
-					return -1;
 				}
 			}
 	}else{
@@ -246,8 +240,6 @@ int* v_longo(char matriz[][N], int gamemode){
 			}else{
 				if(matriz[gamemode][quad+1] == 'o' && matriz[gamemode][quad] == 'o'){
 					v_soma_o ++;
-				}else{
-					return -1;
 				}
 			}
 	}
@@ -261,7 +253,7 @@ int* v_longo(char matriz[][N], int gamemode){
 		k++;
 		}
 
-	aux_diagonal1_vl = diagonal1(aux_matriz_1[quad-1][quad], gamemode);
+	aux_diagonal1_vl = diagonal1(aux_matriz_1, gamemode);
 	v_soma_x = v_soma_x + aux_diagonal1_vl[0];
 	v_soma_o = v_soma_o + aux_diagonal1_vl[1];
 
@@ -269,13 +261,13 @@ int* v_longo(char matriz[][N], int gamemode){
 	w=0, k=0;
 	for(i=1; i<quad; i++){
 		for(j=quad; j<gamemode; j++){
-			aux_matriz_2 = matriz[i][j];
+			aux_matriz_2[k][w] = matriz[i][j];
 			w++;
 		}
 		k++;
 	}
 
-	aux_diagonal2_vl = diagonal2(aux_matriz_2[quad-1][quad], gamemode);
+	aux_diagonal2_vl = diagonal2(aux_matriz_2, gamemode);
 	v_soma_x = v_soma_x + aux_diagonal2_vl[0];
 	v_soma_o = v_soma_o + aux_diagonal2_vl[1];
 
@@ -293,7 +285,7 @@ int* v_longo(char matriz[][N], int gamemode){
 }
 
 //verifica o formato de V com uma das "pernas" mais curta
-int* v_curto(matriz[][N], gamemode){
+int* v_curto(char matriz[][N], int gamemode){
 
 	int i, j, k=0, w=0,
 	quad = gamemode/2; //tamanho padrao de um quadrante
@@ -314,7 +306,7 @@ int* v_curto(matriz[][N], gamemode){
 		k++;
 	}
 
-	aux_diagonal1_vc = diagonal1(aux_matriz_1[quad][quad], gamemode);
+	aux_diagonal1_vc = diagonal1(aux_matriz_1, gamemode);
 	v_soma_x = v_soma_x + aux_diagonal1_vc[0];
 	v_soma_o = v_soma_o + aux_diagonal1_vc[1];
 
@@ -323,8 +315,6 @@ int* v_curto(matriz[][N], gamemode){
 	}else{
 		if(matriz[gamemode-1][gamemode] == 'o'){
 			v_soma_o ++;
-		}else{
-			return -1;
 		}
 	}
 
@@ -350,7 +340,7 @@ int* v_curto(matriz[][N], gamemode){
 		k++;
 	}
 
-	aux_diagonal1_vc = diagonal1(aux_matriz_2[quad][quad], gamemode);
+	aux_diagonal1_vc = diagonal1(aux_matriz_2, gamemode);
 	v_soma_x = v_soma_x + aux_diagonal1_vc[0];
 	v_soma_o = v_soma_o + aux_diagonal1_vc[1];
 
@@ -359,8 +349,6 @@ int* v_curto(matriz[][N], gamemode){
 		}else{
 			if(matriz[gamemode][gamemode-1] == 'o'){
 				v_soma_o ++;
-			}else{
-				return -1;
 			}
 		}	
 
@@ -386,7 +374,7 @@ int* v_curto(matriz[][N], gamemode){
 		k++;
 	}
 
-	aux_diagonal2_vc = diagonal2(aux_matriz_3[quad][quad], gamemode);
+	aux_diagonal2_vc = diagonal2(aux_matriz_3, gamemode);
 	v_soma_x = v_soma_x + aux_diagonal2_vc[0];
 	v_soma_o = v_soma_o + aux_diagonal2_vc[1];
 
@@ -395,8 +383,6 @@ int* v_curto(matriz[][N], gamemode){
 		}else{
 			if(matriz[gamemode-1][1] == 'o') {
 				v_soma_o ++;
-			}else{
-				return -1;
 			}
 		}
 
@@ -422,7 +408,7 @@ int* v_curto(matriz[][N], gamemode){
 		k++;
 	}
 
-	aux_diagonal2_vc = diagonal2(aux_matriz_4[quad][quad], gamemode);
+	aux_diagonal2_vc = diagonal2(aux_matriz_4, gamemode);
 	v_soma_x = v_soma_x + aux_diagonal2_vc[0];
 	v_soma_o = v_soma_o + aux_diagonal2_vc[1];
 
@@ -431,8 +417,6 @@ int* v_curto(matriz[][N], gamemode){
 		}else{
 			if(matriz[gamemode][1] == 'o'){
 				v_soma_o++;
-			}else{
-				return -1;
 			}
 		}
 	if(v_soma_x = 2){
@@ -539,7 +523,7 @@ void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 					exibe_tabuleiro(matriz, gamemode);
 					//inicia escolha aleatoria de posicao
 					do{
-						dimensoes_bot = bot_do_pandemonio(gamemode)
+						dimensoes_bot = bot_do_pandemonio(gamemode);
 						p_horiz_circulo = dimensoes_bot[0];
 						p_vert_circulo = dimensoes_bot[1];
 
