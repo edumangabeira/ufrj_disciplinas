@@ -472,7 +472,7 @@ void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 						//precisa apenas dos valores da primeira jogada(do xis)
 						exibe_tabuleiro(matriz, gamemode);
 						puts("Jogador 1, onde deseja colocar o xis - (X) ?");
-						puts("digite a posicao horizontal e vertical, respectivamente:\n(exemplo 10, 25, 06, 53)");
+						puts("digite a posicao horizontal e vertical, respectivamente, separados por espacos:\n(exemplo 1 0, 2 5, 0 6, 5 3)");
 						scanf("%d%d", &p_horiz_xis, &p_vert_xis);
 						if(matriz[p_horiz_xis][p_vert_xis] == ' '){
 							matriz[p_horiz_xis][p_vert_xis] = 'x';
@@ -488,7 +488,7 @@ void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 					do{
 						exibe_tabuleiro(matriz, gamemode);
 						puts("Jogador 2, onde deseja colocar o circulo - (O) ?");
-						puts("digite a posicao horizontal e vertical, respectivamente:\n(exemplo 10, 25, 06, 53)");
+						puts("digite a posicao horizontal e vertical, respectivamente, separados por espacos:\n(exemplo 1 0, 2 5, 0 6, 5 3)");
 						scanf("%d%d", &p_horiz_circulo, &p_vert_circulo);
 						if(matriz[p_horiz_circulo][p_vert_circulo] == ' '){
 							matriz[p_horiz_circulo][p_vert_circulo] = 'o';
@@ -509,7 +509,7 @@ void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 				    exibe_tabuleiro(matriz, gamemode);
 				    do{
 						puts("Jogador 1, onde deseja colocar o xis - (X) ?");
-						puts("digite a posicao horizontal e vertical, respectivamente:\n(exemplo 10, 25, 06, 53)");
+						puts("digite a posicao horizontal e vertical, respectivamente, separados por espacos:\n(exemplo 1 0, 2 5, 0 6, 5 3)");
 						scanf("%d%d", &p_horiz_xis, &p_vert_xis);
 						if(matriz[p_horiz_xis][p_vert_xis] == ' '){
 							matriz[p_horiz_xis][p_vert_xis] = 'x';	
@@ -632,14 +632,14 @@ void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 				}
 			}
 		}
-	free(dimensoes_bot);
+	/*free(dimensoes_bot);
 	free(vence_horizontais);
 	free(vence_verticais);
 	free(vence_diagonal1);
 	free(vence_diagonal2);
 	free(vence_piramide);
 	free(vence_v_curto);
-	free(vence_v_longo); 
+	free(vence_v_longo); */
 }
 
 
