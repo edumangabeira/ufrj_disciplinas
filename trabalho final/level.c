@@ -434,6 +434,7 @@ int* v_curto(char matriz[][N], int gamemode){
 	}
 	free(aux_diagonal1_vc);
 	free(aux_diagonal2_vc);
+	return vence_vc;
 }
 
 //executa jogo da velha
