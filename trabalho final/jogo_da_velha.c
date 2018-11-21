@@ -16,8 +16,8 @@ int main(void){
 		valid_player = 0, 	//para checar se modo de jogo eh valido
 		gamemode;			//tamanho de uma dimensao do tabuleiro
 		
-	char again,			//guarda a resposta do jogador caso ele queira jogar outra partida
-	int matriz[][N];	//tabuleiro do jogo
+	char again;			//guarda a resposta do jogador caso ele queira jogar outra partida
+	int matriz[N][N];	//tabuleiro do jogo
 
 	while(1){ 
 		//define o jogador a se enfrentar e checa se o valor eh valido
@@ -44,8 +44,8 @@ int main(void){
 			printf("Qual modo de jogo deseja iniciar?\n\t3 - classico\n\t4 - 4x4\n\t5 - 5x5\n\t6 - 6x6\n\t7 - 7x7\n\t8 - 8x8\n\t9 - 9x9");
 			scanf("%d",&gamemode);
 			switch(gamemode){
-				case 3,4,5,6,7,8,9: puts("\t\tO jogo se inicia!!!!!!!!!!! (ง •̀_•́)ง ผ(•̀_•́ผ) ");
-									level.jogo_da_velha(matriz[gamemode][gamemode], gamemode, cpu_or_player);
+				case 3 ... 9: puts("\t\tO jogo se inicia!!!!!!!!!!! (ง •̀_•́)ง ผ(•̀_•́ผ) ");
+									level.jogo_da_velha(matriz, gamemode, cpu_or_player);
 				break;
 
 				default: puts("modo invalido, tente novamente ƪ(‾ε‾“)ʃ");
