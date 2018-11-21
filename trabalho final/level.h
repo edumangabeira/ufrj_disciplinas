@@ -2,6 +2,7 @@
 Eduardo Freire Mangabeira
 Data: [16/10/2018]
 */
+#define N 9
 
 void exibe_tabuleiro(char matriz[][N], int gamemode);
 

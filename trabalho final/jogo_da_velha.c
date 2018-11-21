@@ -45,7 +45,7 @@ int main(void){
 			scanf("%d",&gamemode);
 			switch(gamemode){
 				case 3 ... 9: puts("\t\tO jogo se inicia!!!!!!!!!!! (ง •̀_•́)ง ผ(•̀_•́ผ) ");
-									level.jogo_da_velha(matriz, gamemode, cpu_or_player);
+							  jogo_da_velha(matriz, gamemode, cpu_or_player);
 				break;
 
 				default: puts("modo invalido, tente novamente ƪ(‾ε‾“)ʃ");
