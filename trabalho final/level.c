@@ -484,6 +484,7 @@ void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 						check_play = check_play + 1;
 					
 					}while(check_play <= 0);
+					jogada_vs_player ++;
 
 					check_play = 0;
 					do{
@@ -521,6 +522,7 @@ void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 						check_play = check_play + 1;
 					
 					}while(check_play <= 0);
+					jogada_vs_bot ++;
 
 					check_play = 0;
 					exibe_tabuleiro(matriz, gamemode);
@@ -543,7 +545,7 @@ void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 		}
 
 		//verifica possibilidades de vitoria a partir da quantidade de jogadas necessarias para isso ocorrer
-		if(jogada_vs_player>gamemode-1 || jogada_vs_bot>gamemode-1){
+		if(jogada_vs_player>(2*gamemode)-1 || jogada_vs_bot>(2*gamemode)-1){
 
 			//verifica horizontais
 			vence_horizontais = horizontais(matriz,gamemode);
