@@ -12,12 +12,10 @@ void exibe_tabuleiro(char matriz[][N], int gamemode){
 	int i, j;
 	for (i=0; i<gamemode; i++){
 		printf("\n");
-		printf("--------------------------------------------");
 		for(j=0; j<gamemode; j++){
-				printf("| %d |", matriz[i][j]);
+				printf("| %c |", matriz[i][j]);
 		}
 	}
-	printf("--------------------------------------------");
 	printf("\n\n\n");
 }
 
