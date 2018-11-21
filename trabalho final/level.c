@@ -190,7 +190,7 @@ int* piramide(char matriz[][N], int gamemode){
 		}
 		k++;
 	}
-	aux_diagonal2_p = diagonal2(aux_matriz_1, gamemode);
+	aux_diagonal2_p = diagonal2(aux_matriz_1, quad);
 	v_soma_x = v_soma_x + aux_diagonal2_p[0];
 	v_soma_o = v_soma_o + aux_diagonal2_p[1];
 
@@ -203,7 +203,7 @@ int* piramide(char matriz[][N], int gamemode){
 			}
 		k++;
 	}
-	aux_diagonal1_p = diagonal1(aux_matriz_2, gamemode);
+	aux_diagonal1_p = diagonal1(aux_matriz_2, quad);
 	v_soma_x = v_soma_x + aux_diagonal1_p[0];
 	v_soma_o = v_soma_o + aux_diagonal1_p[1];
 
@@ -264,7 +264,7 @@ int* v_longo(char matriz[][N], int gamemode){
 		k++;
 		}
 
-	aux_diagonal1_vl = diagonal1(aux_matriz_1, gamemode);
+	aux_diagonal1_vl = diagonal1(aux_matriz_1, quad);
 	v_soma_x = v_soma_x + aux_diagonal1_vl[0];
 	v_soma_o = v_soma_o + aux_diagonal1_vl[1];
 
@@ -278,7 +278,7 @@ int* v_longo(char matriz[][N], int gamemode){
 		k++;
 	}
 
-	aux_diagonal2_vl = diagonal2(aux_matriz_2, gamemode);
+	aux_diagonal2_vl = diagonal2(aux_matriz_2, quad);
 	v_soma_x = v_soma_x + aux_diagonal2_vl[0];
 	v_soma_o = v_soma_o + aux_diagonal2_vl[1];
 
@@ -319,7 +319,7 @@ int* v_curto(char matriz[][N], int gamemode){
 		k++;
 	}
 
-	aux_diagonal1_vc = diagonal1(aux_matriz_1, gamemode);
+	aux_diagonal1_vc = diagonal1(aux_matriz_1, quad);
 	v_soma_x = v_soma_x + aux_diagonal1_vc[0];
 	v_soma_o = v_soma_o + aux_diagonal1_vc[1];
 
@@ -354,7 +354,7 @@ int* v_curto(char matriz[][N], int gamemode){
 		k++;
 	}
 
-	aux_diagonal1_vc = diagonal1(aux_matriz_2, gamemode);
+	aux_diagonal1_vc = diagonal1(aux_matriz_2, quad);
 	v_soma_x = v_soma_x + aux_diagonal1_vc[0];
 	v_soma_o = v_soma_o + aux_diagonal1_vc[1];
 
@@ -389,7 +389,7 @@ int* v_curto(char matriz[][N], int gamemode){
 		k++;
 	}
 
-	aux_diagonal2_vc = diagonal2(aux_matriz_3, gamemode);
+	aux_diagonal2_vc = diagonal2(aux_matriz_3, quad);
 	v_soma_x = v_soma_x + aux_diagonal2_vc[0];
 	v_soma_o = v_soma_o + aux_diagonal2_vc[1];
 
@@ -424,7 +424,7 @@ int* v_curto(char matriz[][N], int gamemode){
 		k++;
 	}
 
-	aux_diagonal2_vc = diagonal2(aux_matriz_4, gamemode);
+	aux_diagonal2_vc = diagonal2(aux_matriz_4, quad);
 	v_soma_x = v_soma_x + aux_diagonal2_vc[0];
 	v_soma_o = v_soma_o + aux_diagonal2_vc[1];
 
