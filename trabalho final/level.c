@@ -548,9 +548,9 @@ void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 	}
 	//preenche a matriz vazia ate o fim
 	for(k=play_num; k<gamemode*gamemode; k++){
-		switch(cpu_or_player){
-			//jogo entre duas pessoas
-			case 1: //valida a escolha de posicao 
+		//jogo entre duas pessoas
+		if(cpu_or_player == 1){
+			//valida a escolha de posicao 
 					do{
 						//precisa apenas dos valores da primeira jogada(do xis)
 						exibe_tabuleiro(matriz, gamemode);
@@ -570,6 +570,9 @@ void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 					vencedor_final = percursos(matriz,gamemode,jogada_vs_player, jogada_vs_bot);
 					ganha_x = vencedor_final[0];
 					ganha_o = vencedor_final[1];
+					//para de executar se houver vencedor
+					if(ganha_x == 1 || ganha_o == 1)
+						break;
 
 					check_play = 0;
 					do{
@@ -592,9 +595,13 @@ void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 					vencedor_final = percursos(matriz,gamemode,jogada_vs_player, jogada_vs_bot);
 					ganha_x = vencedor_final[0];
 					ganha_o = vencedor_final[1];
-					break;
+					//para de executar se houver vencedor
+					if(ganha_x == 1 || ganha_o == 1)
+						break;
 			//jogo contra bot
-			case 2:
+			}else{
+				if(cpu_or_player == 2){
+			
 				    exibe_tabuleiro(matriz, gamemode);
 				    do{
 						puts("Jogador 1, onde deseja colocar o xis - (X) ?");
@@ -616,6 +623,9 @@ void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 					vencedor_final = percursos(matriz,gamemode,jogada_vs_player, jogada_vs_bot);
 					ganha_x = vencedor_final[0];
 					ganha_o = vencedor_final[1];
+					//para de executar se houver vencedor
+					if(ganha_x == 1 || ganha_o == 1)
+						break;		
 					//inicia escolha aleatoria de posicao
 					do{
 						dimensoes_bot = bot_do_pandemonio(gamemode);
@@ -634,11 +644,12 @@ void jogo_da_velha(char matriz[][N], int gamemode, int cpu_or_player){
 					vencedor_final = percursos(matriz,gamemode,jogada_vs_player, jogada_vs_bot);
 					ganha_x = vencedor_final[0];
 					ganha_o = vencedor_final[1];
-					break;
-		}
-		//para de executar se houver vencedor
-		if(ganha_x == 1 || ganha_o == 1)
-			break;		
+					//para de executar se houver vencedor
+					if(ganha_x == 1 || ganha_o == 1)
+						break;
+				}
+			}
+		
 	}
 	if(ganha_x == 1){
 		puts("jogador __x__ venceu!!!!!!!!!!!!! UHUUUUUUUUL");
