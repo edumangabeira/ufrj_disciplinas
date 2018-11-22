@@ -3,6 +3,9 @@ Eduardo Freire Mangabeira
 Victoria de Andrade Azevedo
 Data de inicio: [16/10/2018]
 Data de conclusao: [17/11/2018]
+Descricao: Jogo da velha personalizado
+Entrada: Contra quem o usuario deseja jogar e tamanho do tabuleiro.
+Saída: Jogo completo
 */
 #include<stdlib.h>
 #include<stdio.h>
@@ -22,15 +25,16 @@ int main(void){
 
 	//while(1){ 
 		//define o jogador a se enfrentar e checa se o valor eh valido
+		puts("\n\n\tPREPARE-SE PARA O JOGO DA VELHA MAIS INCRIVEL DE TODOS\n\n");
 		do{
 			puts("Deseja enfrentar outro jogador ou a nossa poderosa inteligencia articifial?? (◣_◢)\n\n\tDIGITE 1 para se juntar a outro jogador ou\n\tDIGITE 2 para aceitar o seu destino tragico ヽ༼ຈل͜ຈ༽ﾉ\n");
 			scanf("%d", &cpu_or_player);
 
 			if(cpu_or_player == 1){
-				printf("A-haaaa, sabia que eras covarde ( ͡° ͜ʖ ͡°)");
+				puts("A-haaaa, sabia que eras covarde ( ͡° ͜ʖ ͡°)\n\n");
 				}else{
 					if(cpu_or_player == 2){
-						puts("Ira se arrepender, humano... (☞⌐■_■)☞");
+						puts("\tIra se arrepender, humano... (☞⌐■_■)☞\n\n");
 					}else{
 						puts("Valor invalido. Amigo, sei que voce eh mais esperto que isso. Quer jogar com a maquina ou outro humano?");
 						valid_player = valid_player - 1;

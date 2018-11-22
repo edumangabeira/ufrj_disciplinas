@@ -1,6 +1,8 @@
 /*
 Eduardo Freire Mangabeira
-Data: [16/10/2018]
+Victoria de Andrade Azevedo
+Data de inicio: [16/10/2018]
+Data de conclusao: [17/11/2018]
 */
 #define N 9
 
@@ -22,7 +24,7 @@ int *v_longo(char matriz[][N], int gamemode);
 
 int *v_curto(char matriz[][N], int gamemode);
 
-void percursos(char matriz[][N], int gamemode, int jogada_vs_player, int jogada_vs_bot);
+int *percursos(char matriz[][N], int gamemode, int jogada_vs_player, int jogada_vs_bot);
 
 void jogo_da_velha(char matriz[][N],int gamemode,int cpu_or_player);
 
