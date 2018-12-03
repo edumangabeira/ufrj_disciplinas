@@ -1,0 +1,28 @@
+<!--Questão 3
+	Nome: Eduardo Freire Mangabeira
+	Data: 02/12/2018
+	Descrição: Gera um numero aleatorio de 1 a 10 e pede pro usuario chutar qual foi o numero sorteado
+-->
+
+<!DOCTYPEhtml>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<body>
+		<script>
+			function sort(){
+				 var a = Math.floor(Math.random() * 11); 
+				 var b = document.getElementById('chute').value;
+				 if (a == b)
+				 	document.write("Acertou!");
+				 else
+				 	document.write("Errou");
+			}
+		</script>
+		<form onsubmit ="return sort()">
+			Dê um chute:<input type="text" id="chute"><br>
+			Submit:<input type="submit">
+		</form>
+	</body>
+</head>
+</html>

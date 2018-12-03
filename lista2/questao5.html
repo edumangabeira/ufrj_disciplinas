@@ -1,0 +1,33 @@
+<!--Questão 4
+	Nome: Eduardo Freire Mangabeira
+	Data: 02/12/2018
+	Descrição: Tira uma letra escolhida de uma palavra digitada
+-->
+
+<!DOCTYPEhtml>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<body>
+		<script>
+			function string(){
+				var string = document.getElementById('palavra').value;
+				var tira = document.getElementById('tira').value;
+				for (var i=0; i<string.lenght; i++){
+					if (string[i] == tira){
+						string = string.replace(string[i],"");
+					}
+				}
+				document.getElementById('nova_palavra').value = string;		
+			 }
+		</script>
+		<form>
+			Palavra:<input type="text" id="palavra"><br>
+			Letra que deseja tirar: <input type="text" id="tira"><br>
+			Nova String:<output type="text" id="nova_palavra"><br>
+			Submit:<input type="submit" onclick="string()">
+		
+		</form>
+	</body>
+</head>
+</html>

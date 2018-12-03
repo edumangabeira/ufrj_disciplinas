@@ -1,0 +1,42 @@
+<!--Questão 2
+	Nome: Eduardo Freire Mangabeira
+	Data: 02/12/2018
+	Descrição: Encontra as raízes de uma equação do segundo grau
+-->
+
+<!DOCTYPEhtml>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<body>
+		<script>
+			function raizes(){
+				 var a = parseFloat(document.getElementById('a').value, 10);
+				 var b = parseFloat(document.getElementById('b').value, 10);
+				 var c = parseFloat(document.getElementById('c').value, 10);
+				 if (document.getElementById('a').value == "")
+				 	a = 1;
+				 if (document.getElementById('b').value == "")
+				 	b = 2;
+				 if (document.getElementById('c').value == "")
+				 	c = 3;
+				 var delta = (b**2)-(4*a*c);
+				 if(delta < 0){
+				 	alert("Delta menor do que zero! As raízes não são números reais");
+				 	return false;
+				 }else{
+					 var r1 = (-b + Math.sqrt(delta))/2*a;
+					 var r2 = (-b - Math.sqrt(delta))/2*a;
+					 document.write("raiz 1 =" + String(r1) + " " + "raiz 2 =" + String(r2));
+				}
+			}
+		</script>
+		<form onsubmit ="return raizes()">
+			Coeficiente A<input type="text" id="a"><br>
+			Coeficiente B<input type="text" id="b"><br>
+			Coeficiente C<input type="text" id="c"><br>
+			Submit:<input type="submit">
+		</form>
+	</body>
+</head>
+</html>
