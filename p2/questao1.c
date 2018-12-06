@@ -18,7 +18,7 @@ typedef struct
 	}tItem;
 
 //Recebe N elementos do tipo tItem e os armazena em um arquivo bin´ario
-int main(int argc, int *argv[]){
+int main(int argc, char *argv[]){
 
 	//arquivo de saida
 	FILE *arq;
