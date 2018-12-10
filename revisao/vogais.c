@@ -27,6 +27,7 @@ int main(void){
 		return 3;
 	}
 
+	//pega caracter a caracter até o fim do arquivo
 	while((nova_palavra = fgetc(arq_entrada)) != EOF){
 	//retira apenas vogais
 		switch (nova_palavra) {
