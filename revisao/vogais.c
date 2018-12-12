@@ -1,3 +1,8 @@
+/*
+Descrição: Considere um arquivo texto que armazene caracteres variados.
+Escreva um programa que o leia e gere um novo arquivo que
+descarte todas as vogais do arquivo original.
+*/
 #include<stdio.h>
 #include<stdlib.h>
 
