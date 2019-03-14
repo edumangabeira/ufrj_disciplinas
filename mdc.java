@@ -1,7 +1,12 @@
 /*
 Eduardo Freire Mangabeira
 Github: edumangabeira
-Data: 11/Mar/2019
+Data início: 11/Mar/2019
+
+Descrição: Classe contendo métodos para fatoração, divisão e outras
+operações básicas necessárias para se obter o máximo divisor comum
+entre dois números inteiros.
+
 Entrada: Dois inteiros
 Saída: MDC entre dois inteiros
 */
@@ -9,6 +14,8 @@ import java.util.Scanner;
 class mdc{
 
 	static int N = 26;
+
+
 	/*
 	algoritmo da divisão simples
 	entrada: dois inteiros positivos A e B
@@ -29,6 +36,26 @@ class mdc{
 			}
 		}
 		return resto;
+	}
+
+	/*
+	algoritmo de fatoração mais simples possível
+	entrada: um inteiro positivo n
+	saída: inteiro positivo f que é o menor fator primo de n.
+	*/
+	int fatoracaoIngenua(int inteiro){
+		int f = 2;
+		if(divisao(inteiro, f)){
+			System.out.println(f + " é fator de " + inteiro);
+		}else{
+			f++;
+			if(f>sqrt(inteiro)){
+				System.out.println(inteiro + "é primo");
+			}
+		}
+
+		assert true;
+		// retornar o que?
 	}
 
 	public static void main(String[] args){
