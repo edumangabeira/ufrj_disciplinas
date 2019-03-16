@@ -13,8 +13,8 @@ Saída: MDC entre dois inteiros
 import java.util.Scanner;
 class mdc{
 
-	static int N = 26;
-
+	static int N = 26; // número máximo de primos numa lista
+	// n = 26 == primos de 1 a 100
 
 	/*
 	algoritmo da divisão simples
@@ -42,10 +42,11 @@ class mdc{
 	algoritmo de fatoração mais simples possível
 	entrada: um inteiro positivo n
 	saída: inteiro positivo f que é o menor fator primo de n.
+	--WIP--
 	*/
 	int fatoracaoIngenua(int inteiro){
-		int f = 2;
-		if(divisao(inteiro, f)){
+		int f = 2; // fator primo atual
+		if(divisao(inteiro, f) == 0){
 			System.out.println(f + " é fator de " + inteiro);
 		}else{
 			f++;
@@ -58,12 +59,33 @@ class mdc{
 		// retornar o que?
 	}
 
+	/*
+	algoritmo de fatoração de fermat
+	entrada: um inteiro positivo ímpar n
+	saída: um fator de n e uma mensagem indicando que n é primo
+	--WIP--
+	*/
+	int fatoracaoFermat(int inteiroImpar){
+		int x = sqrt(inteiroImpar);
+
+		if(inteiroImpar == x*x){
+			System.out.println(x + " é fator de "+ inteiroImpar);
+		}else{
+			while((divisao(y,) != 0) || (x != (inteiroImpar + 1)/2)){
+				x ++;
+				int y = sqrt((x*x) - inteiroImpar);
+			}
+
+		}
+
+	}
+	// --WIP--
 	public static void main(String[] args){
 
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Digite dois inteiros(aperte enter ao escolher o primeiro):");
-		String primeiro = sc.next();
-		String segundo = sc.next();
+		primeiro = sc.nextInt();
+		segundo = sc.nextInt();
 		sc.close();
 
 		if(primeiro < 0 || segundo < 0){
