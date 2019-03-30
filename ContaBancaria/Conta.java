@@ -1,4 +1,4 @@
-public class Operacoes{
+public class Conta{
 
 	int numero;
 	String cliente;
@@ -25,28 +25,39 @@ public class Operacoes{
 		if(valor < this.saldo){
 			this.saldo = this.saldo - valor;
 			System.out.println("Operação autorizada pela instituição");
-			System.out.println("Por favor retire seu dinheiro")
+			System.out.println("Por favor retire seu dinheiro");
 		}
 	}
 
 	// deposita uma quantidade x
-	public static void deposito(){
-
+	public static void deposito(float valor){
+		this.saldo = this.saldo + valor;
+		System.out.println("Depositado com sucesso - Valor "+valor
+						  + "R$");
 	}
 
+	
+	// como usar lambda???(precisa?)
+	/*
+	Saldo -> this.saldo
+	
 	// devolve o saldo atual
-	public static void saldo(){
+	public static int saldo(){
+		return this.saldo
 
 	}
+	*/
 
 	// transfere uma quantidade x para uma outra conta y
-	public static void transfere(){
-
+	public static void transfere(float valor, Conta conta){
+		this.saldo = this.saldo - valor;
+		conta.saldo = conta.saldo + valor;
+		System.in.println("Operação realizada com sucesso");
 	}
 
 	// imprime o nome do titular da conta
 	public static void nomeTitular(){
-
+		System.in.println(this.cliente);
 	}
 
 	// devolve o tipo de conta
