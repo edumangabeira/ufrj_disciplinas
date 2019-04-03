@@ -9,10 +9,10 @@ public class MonteCarlo{
 	y = point.nextFloat();
 
 	// define área do plano
-
-	func(float x, float y){
-		y = x*x;
-	}
+	RegionUnderCurve area = new RegionUnderCurve()
+	area.point(x,y);
+	// y == x*x;
+	
 
 	public static void main(String[] args){
 

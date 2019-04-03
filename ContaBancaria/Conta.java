@@ -1,69 +1,61 @@
 public class Conta{
 
-	int numero;
-	String cliente;
-	float saldo;
-	float limite;
+	private String nomeDoTitular;
 
-	public userData(){
-		this.numero = 0
-		this.cliente = "user"
-		this.saldo = 0
-		this.limite = 990 // salario minimo
+	private float saldo;
 
+	private int senha;
+
+	public static final int LIMITE_CHEQUE_ESPECIAL = 900;
+
+	public static final int MAX_SENHAS_INVALIDAS = 3;
+
+	private final int numeroDaConta;
+
+	public Conta(int numeroDaConta, String nomeDoTitular) {
+        this.numeroDaConta = numeroDaConta;
+        this.nomeDoTitular = nomeDoTitular;
+    }
+	public float getSaldo(){
+		return this.saldo;
 	}
 
-	public userData(int numero, float saldo, String cliente, float limite){
-		this.numero = numero
-		this.saldo = saldo
-		this.cliente = cliente
-		this.limite = limite
+	public void setSenha(int senha){
+		this.senha = senha;
 	}
 
-	// saca	uma	quantidade x
-	void saque(float valor){
-		if(valor < this.saldo){
-			this.saldo = this.saldo - valor;
-			System.out.println("Operação autorizada pela instituição");
-			System.out.println("Por favor retire seu dinheiro");
-		}
-	}
+	public void sacar(float valor, int senha)
+		throws SenhaInvalidaException, SaldoInsuficienteException {
 
-	// deposita uma quantidade x
-	void deposito(float valor){
-		this.saldo = this.saldo + valor;
-		System.out.println("Depositado com sucesso - Valor "+valor
-						  + "R$");
-	}
+	        if(valor <= 0){
+	            throw new IllegalArgumentException(
+	                    "O valor sacado deve ser positivo");
+	        }
 
+	        if(senha != this.senha){
+	            throw new SenhaInvalidaException(senha);
+	        }
 
-	// transfere uma quantidade x para uma outra conta y
-	void transfere(float valor, Conta conta){
-		this.saldo = this.saldo - valor;
-		conta.saldo = conta.saldo + valor;
-		System.in.println("Operação realizada com sucesso");
-	}
+	        if(this.saldo + LIMITE_CHEQUE_ESPECIAL < valor) {
+	            throw new SaldoInsuficienteException(this.saldo);
+	        }
 
-	// imprime o nome do titular da conta
-	void nomeTitular(){
+		this.saldo -= valor;
+	}	
 
-		System.in.println(this.cliente);
-	}
+	public void depositar(float valor) {
+        if (valor <= 0) {
+            throw new IllegalArgumentException(
+                    "O valor depositado deve ser positivo");
+        }
+        this.saldo += valor;
+    }
 
-	// devolve o tipo de conta
-	void tipoConta(){
-
-	}
-
-	// como usar lambda???(precisa?)
-	/*
-	Saldo -> this.saldo
-
-	// devolve o saldo atual
-	int saldo(){
-		return this.saldo
-
-	}
-	*/
-
+    public void transferir(float valor,
+                           Conta contaDestino,
+                           int senha) throws SenhaInvalidaException, SaldoInsuficienteException {
+        sacar(valor, senha);
+        contaDestino.depositar(valor);
+        System.out.println("Operação autorizada pela instituição");
+    }
 }

@@ -6,13 +6,21 @@ public class RegionUnderCurve{
 	float axisX = this.b-this.a;
 	float axisY = b-a;
 
+	public point(float x, float y){
 
-	void region(float func, float params){
+
+	}
+
+	public point(){
+
+	}
+
+	public void region(float func, float params){
 		System.println.out("Deseja adicionar um novo domínio?
-						(padrão:[0,1]).
-						1-sim 2-não");
+						(Não recomendado. Padrão:[0,1]).
+						\n1-sim 2-não");
 		Scanner sc = Scanner()
-		if(sc.nextChar() != sim){
+		if(sc.nextInt() != 1){
 			System.println.out("Digite o novo domínio, inferior
 								e superior de forma respectiva.")
 			this.a = sc.next.float();
