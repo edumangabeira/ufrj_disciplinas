@@ -1,55 +1,70 @@
-import java.util.Random;
+import java.lang.Math;
 public class Luta{
 
     /** public Lutador(String nome, String sobrenome, String apelido, String nacionalidade,
-     String categoriaAtual, float altura, int idade, int vitorias, int derrotas, int empates)*/
+     String categoriaAtual, double altura, int idade, int vitorias, int derrotas, int empates)*/
 
     int rounds;
     boolean aprovada;
     Lutador desafiante;
     Lutador desafiado;
+    Categoria categoria;
 
-    public Luta(int rounds, Lutador desafiado, Lutador desafiante){
+    public Luta(int rounds, Lutador desafiado, Lutador desafiante, Categoria categoria){
         this.rounds = rounds;
         this.desafiado = desafiado;
         this.desafiante = desafiante;
+        this.categoria = categoria;
     }
 
     public void lutar(){
         // checando se existe alguma irregularidade na luta
-        if(desafiado.categoriaAtual != desafiante.categoriaAtual){
+        System.out.println(desafiado.getCategoriaAtual());
+        System.out.println(desafiante.getCategoriaAtual());
+        if(!(desafiado.getCategoriaAtual().equals(desafiante.getCategoriaAtual()))){
             System.out.println("Classes de peso distintas, luta cancelada.");
-            return 1;
+            return;
         }
-        aprovada = desafiado.checarPeso();
-        if (aprovada == False){
-            return 1;
-        }
-        aprovada = desafiante.checarPeso();
-        if (aprovada == False) {
-            return 1;
+        // checagem de peso
+        /**
+         * Trocar o @param peso para double em vez de retorar uma categoria String.
+         * 1) O método deve conferir se o peso bate com a categoria mais recente do lutador;
+         * 2) OU o método confere se o lutador tem o peso da categoria escolhida na luta.
+         * */
+        if(!(desafiante.getCategoriaAtual().equals(categoria.getCategoria()))){
+            System.out.println("O lutador" + desafiante.getNome() + " " + desafiante.getSobrenome() + "não passou na pesagem, luta cancelada.");
+            return;
+        }else if(!(desafiado.getCategoriaAtual().equals(categoria.getCategoria()))){
+            System.out.println("O lutador" + desafiado.getNome() + " " + desafiado.getSobrenome() + "não passou na pesagem, luta cancelada.");
+            return;
+        }else{
+            System.out.println("Peso de acordo com a categoria.");
         }
 
         // apresentação dos lutadores
         desafiante.apresentar();
         desafiado.apresentar();
 
-        Random vencedor = new Random();
-        int resultado = vencedor.NextInt((3-0)+1,0);
-        if(resultado == 0){
-            System.out.println("O desafiante" + desafiante.apelido + " venceu");
-            desafiante.setVitorias(desafiante.vitorias+1);
-            desafiado.setDerrotas(desafiado.derrotas+1);
-        }else if (resultado == 1){
-            System.out.println("O desafiado" + desafiado.apelido + " venceu");
-            desafiado.setVitorias(desafiado.vitorias+1);
-            desafiante.setDerrotas(desafiante.derrotas+1);
+        double vencedor = (int)(Math.random()*((2-0)+1))+0;
+
+        if(vencedor == 0.0){
+            System.out.println("O desafiante" + desafiante.getApelido() + " venceu");
+            desafiante.setVitorias(desafiante.getVitorias()+1);
+            desafiado.setDerrotas(desafiado.getDerrotas()+1);
+        }else if (vencedor == 1.0){
+            System.out.println("O desafiado" + desafiado.getApelido() + " venceu");
+            desafiado.setVitorias(desafiado.getVitorias()+1);
+            desafiante.setDerrotas(desafiante.getDerrotas()+1);
 
         }else{
             System.out.println("Houve um empate!");
-            desafiado.setEmpates(desafiado.empates+1);
-            desafiante.setEmpates(desafiante.empates+1);
+            desafiado.setEmpates(desafiado.getEmpates()+1);
+            desafiante.setEmpates(desafiante.getEmpates()+1);
         }
+
+        desafiante.showCard();
+        desafiado.showCard();
+
 
     }
 
