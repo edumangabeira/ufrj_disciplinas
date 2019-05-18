@@ -1,4 +1,4 @@
-public class Categoria {
+public class Categoria{
 
    /* private static final String pena = "pena";
     private static final String leve = "leve";
