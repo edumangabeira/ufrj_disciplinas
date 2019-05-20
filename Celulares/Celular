@@ -1,0 +1,36 @@
+import phone.types.*
+public class Celular{
+
+    double espessura;
+    double largura;
+    double comprimento;
+    String modelo;
+    boolean ligado;
+    double numeroPessoal;
+
+    public Celular(double numeroPessoal,String modelo){
+        this.numeroPessoal = numeroPessoal;
+        this.modelo = modelo;
+    }
+
+
+    public double getNumeroPessoal() {
+        return numeroPessoal;
+    }
+
+
+    public boolean isLigado() {
+        return ligado;
+    }
+
+    public void ligar(){
+        this.ligado = true;
+
+    }
+    public void desligar(){
+        this.ligado = false
+
+    }
+
+
+}

@@ -1,0 +1,4 @@
+package phone.type.dumbphones
+public class DumbPhone extends Celular{
+
+}

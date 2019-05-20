@@ -1,0 +1,4 @@
+package phone.type.featuredphone
+public class FeaturedPhone extends Celular{
+
+}
