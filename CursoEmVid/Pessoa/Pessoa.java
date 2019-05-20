@@ -22,7 +22,7 @@ public class Pessoa{
     }
 
     public void FazerAniver(){
-        System.out.println("Parabén pra você "+ this.nome +"!!!!!");
+        System.out.println("Parabéns pra você "+ this.nome +"!!!!!");
         this.idade = this.idade + 1;
 
     }

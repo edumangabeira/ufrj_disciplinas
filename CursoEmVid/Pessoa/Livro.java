@@ -7,10 +7,11 @@ public class Livro implements Publicacao{
     private Pessoa leitor;
     private boolean aberto;
 
-    public Livro(String titulo, String autor, int totPaginas){
+    public Livro(String titulo, String autor, int totPaginas, Pessoa leitor){
         this.titulo = titulo;
         this.autor = autor;
         this.totPaginas = totPaginas;
+        this.leitor = leitor;
     }
 
     public String getTitulo() {
@@ -19,6 +20,10 @@ public class Livro implements Publicacao{
 
     public String getAutor() {
         return autor;
+    }
+
+    public Pessoa getLeitor() {
+        return leitor;
     }
 
     public int getTotPaginas() {
@@ -41,12 +46,15 @@ public class Livro implements Publicacao{
         this.aberto = aberto;
     }
 
-    public void detalhes(){
-        System.out.println("Autor: " + this.autor);
-        System.out.println("Título: " + this.titulo);
-        System.out.println("Total de páginas: " + this.totPaginas);
-        System.out.println();
-
+    public String detalhes() {
+        return "Livro{" +
+                "titulo='" + titulo + '\'' +
+                ", autor='" + autor + '\'' +
+                ", totPaginas=" + totPaginas +
+                ", pagAtual=" + pagAtual +
+                ", leitor=" + leitor.getNome() +
+                ", aberto=" + aberto +
+                '}';
     }
 
     // Métodos abstratos
