@@ -1,4 +1,4 @@
-package phone.type.smartphone
-public class Smartphone extends Celular{
+// package phone.type.smartphone
+public class Smartphone extends FeaturePhone{
 
 }

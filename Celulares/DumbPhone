@@ -1,4 +1,10 @@
-package phone.type.dumbphones
+// package phone.type.dumbphones
+import java.util.Scanner
 public class DumbPhone extends Celular{
+
+    public double calculadora(double a, double b){
+        System.out.println();
+    }
+
 
 }

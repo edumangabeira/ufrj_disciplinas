@@ -1,4 +1,16 @@
-package phone.type.featuredphone
-public class FeaturedPhone extends Celular{
+// package phone.type.featuredphone
+public class FeaturedPhone extends DumbPhone{
+
+    public void playmp3(){
+
+    }
+
+    public void ligaBluetooth(){
+
+    }
+
+    public void desligaBluetooth(){
+
+    }
 
 }

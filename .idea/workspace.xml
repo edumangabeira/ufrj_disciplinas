@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="618bcdfe-023c-43a5-91a0-4cf195e28dd3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CursoEmVid/Pessoa/Livro.java" beforeDir="false" afterPath="$PROJECT_DIR$/CursoEmVid/Pessoa/Livro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CursoEmVid/Pessoa/Pessoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/CursoEmVid/Pessoa/Pessoa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CursoEmVid/Pessoa/Publicacao.java" beforeDir="false" afterPath="$PROJECT_DIR$/CursoEmVid/Pessoa/Publicacao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Celulares/Celular" beforeDir="false" afterPath="$PROJECT_DIR$/Celulares/Celular" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Celulares/DumbPhone" beforeDir="false" afterPath="$PROJECT_DIR$/Celulares/DumbPhone" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Celulares/FeaturePhone" beforeDir="false" afterPath="$PROJECT_DIR$/Celulares/FeaturePhone" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Celulares/Smartphone" beforeDir="false" afterPath="$PROJECT_DIR$/Celulares/Smartphone" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,43 +20,103 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CursoEmVid/Pessoa/Pessoa.java">
+        <entry file="file://$PROJECT_DIR$/Celulares/Principal.Java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
+            <state relative-caret-position="68">
+              <caret line="4" column="3" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Celulares/Celular">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="392">
+              <caret line="52" column="49" selection-start-line="52" selection-start-column="49" selection-end-line="52" selection-end-column="49" />
               <folding>
-                <element signature="e#266#267#0" expanded="true" />
-                <element signature="e#293#294#0" expanded="true" />
-                <element signature="e#324#325#0" expanded="true" />
-                <element signature="e#351#352#0" expanded="true" />
-                <element signature="e#380#381#0" expanded="true" />
-                <element signature="e#408#409#0" expanded="true" />
+                <element signature="e#920#921#0" expanded="true" />
+                <element signature="e#995#996#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CursoEmVid/Pessoa/Livro.java">
+        <entry file="file://$PROJECT_DIR$/Celulares/DumbPhone">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-577" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/CursoEmVid/Pessoa/Principal.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="119">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+              <folding>
+                <element signature="e#127#128#0" expanded="true" />
+                <element signature="e#163#164#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CursoEmVid/Pessoa/Publicacao.java">
+        <entry file="file://$PROJECT_DIR$/Celulares/FeaturePhone">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="187">
+              <caret line="11" column="35" lean-forward="true" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Celulares/Smartphone">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" column="44" selection-start-line="1" selection-start-column="44" selection-end-line="1" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Celulares/Nokia.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="76" lean-forward="true" selection-start-line="3" selection-start-column="76" selection-end-line="3" selection-end-column="76" />
+              <folding>
+                <element signature="e#82#83#0" expanded="true" />
+                <element signature="e#101#102#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Celulares/Huaweii.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="40" selection-start-column="40" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Celulares/Motorola.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Celulares/Galaxy.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="1" selection-end-line="2" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Celulares/IOS.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="36" selection-start-column="36" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -92,6 +153,16 @@
         <option value="$PROJECT_DIR$/CursoEmVid/Pessoa/Publicacao.java" />
         <option value="$PROJECT_DIR$/CursoEmVid/Pessoa/Livro.java" />
         <option value="$PROJECT_DIR$/CursoEmVid/Pessoa/Principal.java" />
+        <option value="$PROJECT_DIR$/Celulares/Smartphone" />
+        <option value="$PROJECT_DIR$/Celulares/Huaweii.java" />
+        <option value="$PROJECT_DIR$/Celulares/Motorola.java" />
+        <option value="$PROJECT_DIR$/Celulares/Galaxy.java" />
+        <option value="$PROJECT_DIR$/Celulares/IOS.java" />
+        <option value="$PROJECT_DIR$/Celulares/Principal.Java" />
+        <option value="$PROJECT_DIR$/Celulares/Nokia.java" />
+        <option value="$PROJECT_DIR$/Celulares/FeaturePhone" />
+        <option value="$PROJECT_DIR$/Celulares/DumbPhone" />
+        <option value="$PROJECT_DIR$/Celulares/Celular" />
       </list>
     </option>
   </component>
@@ -118,13 +189,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Atividades_Comp_2" type="b2602c69:ProjectViewProjectNode" />
               <item name="Atividades_Comp_2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Atividades_Comp_2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Atividades_Comp_2" type="462c0819:PsiDirectoryNode" />
+              <item name="Celulares" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Atividades_Comp_2" type="b2602c69:ProjectViewProjectNode" />
@@ -141,6 +216,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -178,7 +254,7 @@
     <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.15695792" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.15938511" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -193,7 +269,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49919093" visible="true" weight="0.32919255" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49919093" weight="0.32919255" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5008091" side_tool="true" weight="0.32919255" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Messages" order="10" />
@@ -207,7 +283,7 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15695792" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15938511" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -222,8 +298,8 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49919093" visible="true" weight="0.32919255" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5008091" side_tool="true" visible="true" weight="0.32919255" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49919093" weight="0.32919255" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5008091" side_tool="true" weight="0.32919255" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Messages" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -375,6 +451,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/CursoEmVid/Pessoa/Livro.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CursoEmVid/Pessoa/Principal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CursoEmVid/Pessoa/Pessoa.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -393,19 +479,89 @@
     <entry file="file://$PROJECT_DIR$/CursoEmVid/Pessoa/Publicacao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CursoEmVid/Pessoa/Livro.java">
+    <entry file="file://$PROJECT_DIR$/Celulares/Principal.Java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-577" />
+        <state relative-caret-position="68">
+          <caret line="4" column="3" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CursoEmVid/Pessoa/Principal.java">
+    <entry file="file://$PROJECT_DIR$/Celulares/DumbPhone">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="119">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#127#128#0" expanded="true" />
+            <element signature="e#163#164#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Celulares/FeaturePhone">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="35" lean-forward="true" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Celulares/Smartphone">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="44" selection-start-line="1" selection-start-column="44" selection-end-line="1" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Celulares/Nokia.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="76" lean-forward="true" selection-start-line="3" selection-start-column="76" selection-end-line="3" selection-end-column="76" />
+          <folding>
+            <element signature="e#82#83#0" expanded="true" />
+            <element signature="e#101#102#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Celulares/Huaweii.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="40" selection-start-column="40" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Celulares/Motorola.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Celulares/Galaxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="1" selection-end-line="2" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Celulares/IOS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="36" selection-start-column="36" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Celulares/Celular">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="52" column="49" selection-start-line="52" selection-start-column="49" selection-end-line="52" selection-end-column="49" />
+          <folding>
+            <element signature="e#920#921#0" expanded="true" />
+            <element signature="e#995#996#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
