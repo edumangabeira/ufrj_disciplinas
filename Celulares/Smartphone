@@ -1,4 +1,59 @@
 // package phone.type.smartphone
 public class Smartphone extends FeaturePhone{
 
+    private int qtdDeFotos;
+    private int qtdDeAudios;
+    private int qtdDeVideos;
+
+
+    public Smartphone(String modelo, boolean ligado, double numeroPessoal){
+        super(String modelo, boolean ligado, double numeroPessoal;
+    }
+
+    public Smartphone(String modelo, boolean ligado, double numeroPessoal,
+                      int qtdDeFotos, int qtdDeAudios, int qtdDeVideos){
+        this.modelo = modelo;
+        this.ligado = ligado;
+        this.numeroPessoal = numeroPessoal;
+        this.qtdDeFotos = qtdDeFotos;
+        this.qtdDeAudios = qtdDeAudios;
+        this.qtdDeVideos = qtdDeVideos;
+    }
+
+    @Override
+    public void playMp3(){
+        System.out.println("Tocando os maiores sucessos de 2010!!!");
+    }
+
+    public void playVideo(){
+        System.out.println("Exibindo gatinho atrapalhado");
+    }
+
+    public void playAudio(){
+        System.out.println("");
+    }
+
+    public void tirarFoto(){
+        qtdDeFotos ++;
+    }
+
+    public void gravarAudio(){
+        qtdDeAudios ++;
+    }
+
+    public void gravarVideo(){
+        qtdDeVideos ++;
+    }
+
+    public int getQuatidadeDeAudios() {
+        return qtdDeAudios;
+    }
+
+    public int getQuatidadeDeFotos() {
+        return qtdDeFotos;
+    }
+
+    public int getQuatidadeDeVideos() {
+        return qtdDeVideos;
+    }
 }

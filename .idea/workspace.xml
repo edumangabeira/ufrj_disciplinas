@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="618bcdfe-023c-43a5-91a0-4cf195e28dd3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Celulares/Celular" beforeDir="false" afterPath="$PROJECT_DIR$/Celulares/Celular" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Celulares/DumbPhone" beforeDir="false" afterPath="$PROJECT_DIR$/Celulares/DumbPhone" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Celulares/FeaturePhone" beforeDir="false" afterPath="$PROJECT_DIR$/Celulares/FeaturePhone" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Celulares/Galaxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/Celulares/Galaxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Celulares/Huaweii.java" beforeDir="false" afterPath="$PROJECT_DIR$/Celulares/Huaweii.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Celulares/IOS.java" beforeDir="false" afterPath="$PROJECT_DIR$/Celulares/IOS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Celulares/Motorola.java" beforeDir="false" afterPath="$PROJECT_DIR$/Celulares/Motorola.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Celulares/Principal.Java" beforeDir="false" afterPath="$PROJECT_DIR$/Celulares/Principal.Java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Celulares/Smartphone" beforeDir="false" afterPath="$PROJECT_DIR$/Celulares/Smartphone" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,23 +23,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Celulares/Principal.Java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
-              <caret line="4" column="3" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+              <caret line="4" column="55" selection-start-line="4" selection-start-column="55" selection-end-line="4" selection-end-column="55" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Celulares/Celular">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="52" column="49" selection-start-line="52" selection-start-column="49" selection-end-line="52" selection-end-column="49" />
+            <state relative-caret-position="612">
+              <caret line="57" column="5" lean-forward="true" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
               <folding>
-                <element signature="e#920#921#0" expanded="true" />
-                <element signature="e#995#996#0" expanded="true" />
+                <element signature="method#enviarSMS#0;class#Celular#0" />
+                <element signature="method#fazerLigacao#0;class#Celular#0" />
+                <element signature="method#toString#0;class#Celular#0" />
               </folding>
             </state>
           </provider>
@@ -44,30 +49,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Celulares/DumbPhone">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="34">
+              <caret line="2" column="40" lean-forward="true" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
               <folding>
-                <element signature="e#127#128#0" expanded="true" />
-                <element signature="e#163#164#0" expanded="true" />
+                <element signature="method#calculadora#0;class#DumbPhone#0" />
+                <element signature="e#494#522#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Celulares/FeaturePhone">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="35" lean-forward="true" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Celulares/Smartphone">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="44" selection-start-line="1" selection-start-column="44" selection-end-line="1" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -75,8 +62,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Celulares/Nokia.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="76" lean-forward="true" selection-start-line="3" selection-start-column="76" selection-end-line="3" selection-end-column="76" />
+            <state>
+              <caret column="16" selection-start-column="16" selection-end-column="16" />
               <folding>
                 <element signature="e#82#83#0" expanded="true" />
                 <element signature="e#101#102#0" expanded="true" />
@@ -86,10 +73,17 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Celulares/Huaweii.java">
+        <entry file="file://$PROJECT_DIR$/Celulares/FeaturePhone">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="40" selection-start-column="40" selection-end-column="40" />
+            <state relative-caret-position="68">
+              <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+              <folding>
+                <element signature="e#141#142#0" expanded="true" />
+                <element signature="e#221#222#0" expanded="true" />
+                <element signature="method#ligaBluetooth#0;class#FeaturedPhone#0" />
+                <element signature="e#407#408#0" expanded="true" />
+                <element signature="e#439#440#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -97,8 +91,47 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Celulares/Motorola.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="153">
+              <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Celulares/Smartphone">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-398">
+              <caret line="18" column="39" lean-forward="true" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+              <folding>
+                <element signature="e#587#588#0" expanded="true" />
+                <element signature="e#663#664#0" expanded="true" />
+                <element signature="e#693#694#0" expanded="true" />
+                <element signature="e#759#760#0" expanded="true" />
+                <element signature="e#789#790#0" expanded="true" />
+                <element signature="e#827#828#0" expanded="true" />
+                <element signature="e#857#858#0" expanded="true" />
+                <element signature="e#886#887#0" expanded="true" />
+                <element signature="e#918#919#0" expanded="true" />
+                <element signature="e#948#949#0" expanded="true" />
+                <element signature="e#980#981#0" expanded="true" />
+                <element signature="e#1010#1011#0" expanded="true" />
+                <element signature="e#1232#1233#0" expanded="true" />
+                <element signature="e#1305#1306#0" expanded="true" />
+                <element signature="e#1380#1381#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Celulares/Huaweii.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="5" lean-forward="true" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+              <folding>
+                <element signature="e#79#80#0" expanded="true" />
+                <element signature="e#115#116#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -107,7 +140,7 @@
         <entry file="file://$PROJECT_DIR$/Celulares/Galaxy.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
-              <caret line="2" column="1" selection-end-line="2" selection-end-column="1" />
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -115,8 +148,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Celulares/IOS.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="36" selection-start-column="36" selection-end-column="36" />
+            <state relative-caret-position="170">
+              <caret line="10" column="51" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -153,16 +186,16 @@
         <option value="$PROJECT_DIR$/CursoEmVid/Pessoa/Publicacao.java" />
         <option value="$PROJECT_DIR$/CursoEmVid/Pessoa/Livro.java" />
         <option value="$PROJECT_DIR$/CursoEmVid/Pessoa/Principal.java" />
-        <option value="$PROJECT_DIR$/Celulares/Smartphone" />
+        <option value="$PROJECT_DIR$/Celulares/Nokia.java" />
+        <option value="$PROJECT_DIR$/Celulares/DumbPhone" />
         <option value="$PROJECT_DIR$/Celulares/Huaweii.java" />
         <option value="$PROJECT_DIR$/Celulares/Motorola.java" />
+        <option value="$PROJECT_DIR$/Celulares/Celular" />
+        <option value="$PROJECT_DIR$/Celulares/Principal.Java" />
+        <option value="$PROJECT_DIR$/Celulares/Smartphone" />
+        <option value="$PROJECT_DIR$/Celulares/FeaturePhone" />
         <option value="$PROJECT_DIR$/Celulares/Galaxy.java" />
         <option value="$PROJECT_DIR$/Celulares/IOS.java" />
-        <option value="$PROJECT_DIR$/Celulares/Principal.Java" />
-        <option value="$PROJECT_DIR$/Celulares/Nokia.java" />
-        <option value="$PROJECT_DIR$/Celulares/FeaturePhone" />
-        <option value="$PROJECT_DIR$/Celulares/DumbPhone" />
-        <option value="$PROJECT_DIR$/Celulares/Celular" />
       </list>
     </option>
   </component>
@@ -270,7 +303,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49919093" weight="0.32919255" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5008091" side_tool="true" weight="0.32919255" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="8" sideWeight="0.5008091" side_tool="true" visible="true" weight="0.32919255" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Messages" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -283,7 +316,7 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15938511" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15938511" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -298,7 +331,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49919093" weight="0.32919255" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49919093" visible="true" weight="0.32919255" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5008091" side_tool="true" weight="0.32919255" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Messages" order="10" />
@@ -483,42 +516,80 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Celulares/Principal.Java">
+    <entry file="file://$PROJECT_DIR$/Celulares/IOS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="51" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Celulares/Galaxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Celulares/Huaweii.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" column="3" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Celulares/DumbPhone">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <caret line="4" column="5" lean-forward="true" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
           <folding>
-            <element signature="e#127#128#0" expanded="true" />
-            <element signature="e#163#164#0" expanded="true" />
+            <element signature="e#79#80#0" expanded="true" />
+            <element signature="e#115#116#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Celulares/FeaturePhone">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="35" lean-forward="true" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Celulares/Smartphone">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="44" selection-start-line="1" selection-start-column="44" selection-end-line="1" selection-end-column="44" />
+        <state relative-caret-position="-398">
+          <caret line="18" column="39" lean-forward="true" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+          <folding>
+            <element signature="e#587#588#0" expanded="true" />
+            <element signature="e#663#664#0" expanded="true" />
+            <element signature="e#693#694#0" expanded="true" />
+            <element signature="e#759#760#0" expanded="true" />
+            <element signature="e#789#790#0" expanded="true" />
+            <element signature="e#827#828#0" expanded="true" />
+            <element signature="e#857#858#0" expanded="true" />
+            <element signature="e#886#887#0" expanded="true" />
+            <element signature="e#918#919#0" expanded="true" />
+            <element signature="e#948#949#0" expanded="true" />
+            <element signature="e#980#981#0" expanded="true" />
+            <element signature="e#1010#1011#0" expanded="true" />
+            <element signature="e#1232#1233#0" expanded="true" />
+            <element signature="e#1305#1306#0" expanded="true" />
+            <element signature="e#1380#1381#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Celulares/Motorola.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Celulares/FeaturePhone">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+          <folding>
+            <element signature="e#141#142#0" expanded="true" />
+            <element signature="e#221#222#0" expanded="true" />
+            <element signature="method#ligaBluetooth#0;class#FeaturedPhone#0" />
+            <element signature="e#407#408#0" expanded="true" />
+            <element signature="e#439#440#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Celulares/Nokia.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="76" lean-forward="true" selection-start-line="3" selection-start-column="76" selection-end-line="3" selection-end-column="76" />
+        <state>
+          <caret column="16" selection-start-column="16" selection-end-column="16" />
           <folding>
             <element signature="e#82#83#0" expanded="true" />
             <element signature="e#101#102#0" expanded="true" />
@@ -526,42 +597,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Celulares/Huaweii.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="40" selection-start-column="40" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Celulares/Motorola.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Celulares/Galaxy.java">
+    <entry file="file://$PROJECT_DIR$/Celulares/DumbPhone">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="1" selection-end-line="2" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Celulares/IOS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="36" selection-start-column="36" selection-end-column="36" />
+          <caret line="2" column="40" lean-forward="true" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
+          <folding>
+            <element signature="method#calculadora#0;class#DumbPhone#0" />
+            <element signature="e#494#522#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Celulares/Celular">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="52" column="49" selection-start-line="52" selection-start-column="49" selection-end-line="52" selection-end-column="49" />
+        <state relative-caret-position="612">
+          <caret line="57" column="5" lean-forward="true" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
           <folding>
-            <element signature="e#920#921#0" expanded="true" />
-            <element signature="e#995#996#0" expanded="true" />
+            <element signature="method#enviarSMS#0;class#Celular#0" />
+            <element signature="method#fazerLigacao#0;class#Celular#0" />
+            <element signature="method#toString#0;class#Celular#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Celulares/Principal.Java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="55" selection-start-line="4" selection-start-column="55" selection-end-line="4" selection-end-column="55" />
         </state>
       </provider>
     </entry>
