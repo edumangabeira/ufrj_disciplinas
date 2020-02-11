@@ -1,0 +1,27 @@
+<!--Questão 4
+	Nome: Eduardo Freire Mangabeira
+	Data: 02/12/2018
+	Descrição: Escreva uma página para calcular os dias restantes até o próximo Natal.
+-->
+
+<!DOCTYPEhtml>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<body>
+		<script>
+			function date(){
+				var now = new Date(document.getElementById('data').value);
+				var natal = new Date("12/25/2018");
+				var timeDiff = Math.abs(natal.getTime() - now.getTime());
+				var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+			 	document.write("Faltam " + String(diffDays) + " dias para o natal");
+			 }
+		</script>
+		<form onsubmit ="return date()">
+			Data atual:<input type="text" id="data"><br>
+			Submit:<input type="submit">
+		</form>
+	</body>
+</head>
+</html>

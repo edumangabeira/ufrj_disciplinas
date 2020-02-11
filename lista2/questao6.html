@@ -1,0 +1,28 @@
+<!--Questão 6
+	Nome: Eduardo Freire Mangabeira
+	Data: 05/12/2018
+	Descrição: Conta quantidade de substring numa string
+	Status: Não está funcional
+-->
+<!DOCTYPEhtml>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<body>
+		<script type="text/javascript">
+			function count_string(){
+				var string = document.getElementById('palavra').value;
+				var substr = document.getElementById('letra').value;
+				resultado=string.split(substr);
+				document.getElementById('resposta').value=(resultado.length)-1;		
+			 }
+		</script>
+		<form action="#" onsubmit="count_string()">
+			Palavra:<input type="text" id="palavra"><br>
+			Letra que deseja contar: <input type="text" id="letra"><br>
+			<input type="submit" value="contar a letra"><br>
+			Quantidade de repetições:<input id="resposta" readonly"><br>
+		</form>
+	</body>
+</head>
+</html>

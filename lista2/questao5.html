@@ -1,0 +1,28 @@
+<!--Questão 5
+	Nome: Eduardo Freire Mangabeira
+	Data: 02/12/2018
+	Descrição: Tira uma letra escolhida de uma palavra digitada
+-->
+<!DOCTYPEhtml>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<body>
+		<script type="text/javascript">
+			function string(){
+				var string = document.getElementById('palavra').value;
+				var tira = document.getElementById('tira').value;
+				var re = new RegExp(tira, 'g');
+				string = string.replace(re,'');
+				document.getElementById('nova_palavra').value = string;		
+			 }
+		</script>
+		<form action="#" onsubmit="string()">
+			Palavra:<input type="text" id="palavra"><br>
+			Letra que deseja tirar: <input type="text" id="tira"><br>
+			<input type="submit" value="retirar a leta"><br>
+			Nova String:<input id="nova_palavra" readonly"><br>
+		</form>
+	</body>
+</head>
+</html>
