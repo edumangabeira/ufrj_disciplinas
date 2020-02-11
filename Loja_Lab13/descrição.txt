@@ -1,0 +1,2 @@
+Os scripts foram copiados de github.com/vigusmao/Comp2_2019_1/LivrariaVirtual, as alterações são referentes ao lab13 de 17/06/2019
+

@@ -1,0 +1,31 @@
+// package phone.type.featuredphone
+public class FeaturedPhone extends DumbPhone{
+
+
+    private boolean bluetooth;
+
+    // métodos
+    public void playMp3(){
+        System.out.println("Tocando os maiores sucessos dos anos 2000!");
+    }
+
+    public void ligaBluetooth(){
+        this.bluetooth = true;
+
+    }
+
+    public void desligaBluetooth(){
+        this.bluetooth = false;
+    }
+
+    public boolean isBluetooth() {
+        return bluetooth;
+    }
+
+    @Override
+    public String toString() {
+        return "FeaturedPhone{" +
+                "bluetooth=" + bluetooth +
+                '}';
+    }
+}

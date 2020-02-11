@@ -1,0 +1,75 @@
+public abstract class Celular{
+
+    // atributos
+    private String modelo;
+    private boolean ligado;
+    private double numeroPessoal;
+    String mensagem;
+
+    // construtor
+    public Celular(String modelo, boolean ligado, double numeroPessoal){
+        this.modelo = modelo;
+        this.ligado = ligado;
+        this.numeroPessoal = numeroPessoal;
+    }
+
+    // métodos
+    public double getNumeroPessoal() {
+        return numeroPessoal;
+    }
+
+    public final String getModelo() {
+        return modelo;
+    }
+
+    public final void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public final double getNumeroPessoal(double numeroPessoal){
+        return numeroPessoal;
+    }
+
+    public final void setNumeroPessoal(double numeroPessoal) {
+        this.numeroPessoal = numeroPessoal;
+    }
+
+    public final boolean isLigado() {
+        return ligado;
+    }
+
+    public final void ligar(){
+        this.ligado = true;
+    }
+
+    public final void desligar(){
+        this.ligado = false
+    }
+
+    public void setUltimaMensagem(String mensagem){this.mensagem = mensagem;}
+
+    public String showUltimaMensagem() {
+        System.out.println("sua última mensagem recebida: " + mensagem);
+    }
+
+    public void enviarSMS(Celular celular, String mensagem){
+        System.out.println("Enviando mensagem para " + celular.getNumeroPessoal());
+        celular.setUltimaMensagem(mensagem);
+    }
+
+    public void fazerLigacao(Celular celular){
+        numero = celular.getNumeroPessoal();
+        System.out.println("Chamando........");
+        System.out.println("Você ligou para o número: "+ numero);
+        System.out.println("Chamada finalizada");
+    }
+
+    @Override
+    public String toString() {
+        return "Celular{" +
+                "modelo='" + modelo + '\'' +
+                ", ligado=" + ligado +
+                ", número pessoal=" + numeroPessoal +
+                '}';
+    }
+}
