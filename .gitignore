@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 *.xlsx
 *.xls
 *.iml
 *.xml
+=======
+*.out
+*.exe
+*.h.gch
+>>>>>>> Atividades_Comp/master
